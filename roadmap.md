@@ -5,5 +5,5 @@
 - [x] Build home booking experience and all requested content sections.
 - [x] Add all requested service, route, fleet, about, contact, and FAQ pages.
 - [x] Add unique page metadata and LocalBusiness structured data.
-- [ ] Verify compile, booking interaction, and responsive widths.
+- [x] Verify compile, booking interaction, and responsive widths.
 - [ ] Add sitemap after a real public site URL exists.
