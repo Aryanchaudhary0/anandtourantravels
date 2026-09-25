@@ -43,7 +43,7 @@ export const rateTables = vehicles.map((vehicle, vehicleIndex) => ({
   ...vehicle,
   rates: destinations.map((destination, index) => ({
     destination,
-    price: vehicleIndex === 0 ? dzireRates[index] : ertigaRates[index],
+    price: (vehicleIndex === 0 ? dzireRates[index] : ertigaRates[index]) ?? 0,
   })),
 }));
 
