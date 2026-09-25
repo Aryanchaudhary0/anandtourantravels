@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,24 +61,31 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-highlight: var(--highlight);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-accent-foreground: var(--accent-foreground);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.75rem;
+  --background: oklch(0.99 0.004 240);
+  --foreground: oklch(0.2 0.045 251);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.21 0.055 252);
+  --primary-foreground: oklch(0.985 0.002 240);
+  --secondary: oklch(0.94 0.025 239);
+  --secondary-foreground: oklch(0.28 0.07 246);
+  --muted: oklch(0.965 0.009 240);
+  --muted-foreground: oklch(0.48 0.035 250);
+  --accent: oklch(0.68 0.22 41);
+  --accent-foreground: oklch(1 0 0);
+  --highlight: oklch(0.97 0.038 67);
+  --whatsapp: oklch(0.72 0.19 148);
+  --whatsapp-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -140,5 +149,19 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
   }
+
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, h4 { letter-spacing: 0; }
+  button, a, input, select { letter-spacing: 0; }
 }
+
+@utility site-container { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: 1rem; @media (min-width: 640px) { padding-inline: 1.5rem; } @media (min-width: 1024px) { padding-inline: 2rem; } }
+@utility section { padding-block: 4.5rem; @media (min-width: 768px) { padding-block: 6rem; } }
+@utility section-eyebrow { margin-bottom: .65rem; color: var(--color-accent); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+@utility section-title { color: var(--color-foreground); font-family: var(--font-display); font-size: 1.875rem; line-height: 1.2; font-weight: 800; @media (min-width: 640px) { font-size: 2.25rem; } }
+@utility section-copy { margin-top: .9rem; color: var(--color-muted-foreground); line-height: 1.75; }
+@utility bg-hero-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 96%, transparent) 0%, color-mix(in oklab, var(--primary) 82%, transparent) 52%, color-mix(in oklab, var(--primary) 58%, transparent) 100%); }
+@utility bg-page-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 96%, transparent), color-mix(in oklab, var(--primary) 68%, transparent)); }
