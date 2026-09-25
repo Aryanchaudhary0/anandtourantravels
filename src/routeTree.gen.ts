@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AirportTaxiRouteImport } from './routes/airport-taxi'
+import { Route as CharDhamYatraRouteImport } from './routes/char-dham-yatra'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as KotdwarToDehradunTaxiRouteImport } from './routes/kotdwar-to-dehradun-taxi'
+import { Route as KotdwarToDelhiTaxiRouteImport } from './routes/kotdwar-to-delhi-taxi'
+import { Route as KotdwarToHaridwarTaxiRouteImport } from './routes/kotdwar-to-haridwar-taxi'
+import { Route as KotdwarToLansdowneTaxiRouteImport } from './routes/kotdwar-to-lansdowne-taxi'
+import { Route as KotdwarToRishikeshTaxiRouteImport } from './routes/kotdwar-to-rishikesh-taxi'
+import { Route as OutstationTaxiRouteImport } from './routes/outstation-taxi'
+import { Route as TaxiServiceRouteImport } from './routes/taxi-service'
+import { Route as VehiclesRouteImport } from './routes/vehicles'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AirportTaxiRoute = AirportTaxiRouteImport.update({
+  id: '/airport-taxi',
+  path: '/airport-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CharDhamYatraRoute = CharDhamYatraRouteImport.update({
+  id: '/char-dham-yatra',
+  path: '/char-dham-yatra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToDehradunTaxiRoute = KotdwarToDehradunTaxiRouteImport.update({
+  id: '/kotdwar-to-dehradun-taxi',
+  path: '/kotdwar-to-dehradun-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToDelhiTaxiRoute = KotdwarToDelhiTaxiRouteImport.update({
+  id: '/kotdwar-to-delhi-taxi',
+  path: '/kotdwar-to-delhi-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToHaridwarTaxiRoute = KotdwarToHaridwarTaxiRouteImport.update({
+  id: '/kotdwar-to-haridwar-taxi',
+  path: '/kotdwar-to-haridwar-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToLansdowneTaxiRoute = KotdwarToLansdowneTaxiRouteImport.update({
+  id: '/kotdwar-to-lansdowne-taxi',
+  path: '/kotdwar-to-lansdowne-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToRishikeshTaxiRoute = KotdwarToRishikeshTaxiRouteImport.update({
+  id: '/kotdwar-to-rishikesh-taxi',
+  path: '/kotdwar-to-rishikesh-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutstationTaxiRoute = OutstationTaxiRouteImport.update({
+  id: '/outstation-taxi',
+  path: '/outstation-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaxiServiceRoute = TaxiServiceRouteImport.update({
+  id: '/taxi-service',
+  path: '/taxi-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VehiclesRoute = VehiclesRouteImport.update({
+  id: '/vehicles',
+  path: '/vehicles',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/airport-taxi': typeof AirportTaxiRoute
+  '/char-dham-yatra': typeof CharDhamYatraRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/kotdwar-to-dehradun-taxi': typeof KotdwarToDehradunTaxiRoute
+  '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
+  '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
+  '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
+  '/outstation-taxi': typeof OutstationTaxiRoute
+  '/taxi-service': typeof TaxiServiceRoute
+  '/vehicles': typeof VehiclesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/airport-taxi': typeof AirportTaxiRoute
+  '/char-dham-yatra': typeof CharDhamYatraRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/kotdwar-to-dehradun-taxi': typeof KotdwarToDehradunTaxiRoute
+  '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
+  '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
+  '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
+  '/outstation-taxi': typeof OutstationTaxiRoute
+  '/taxi-service': typeof TaxiServiceRoute
+  '/vehicles': typeof VehiclesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/airport-taxi': typeof AirportTaxiRoute
+  '/char-dham-yatra': typeof CharDhamYatraRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/kotdwar-to-dehradun-taxi': typeof KotdwarToDehradunTaxiRoute
+  '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
+  '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
+  '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
+  '/outstation-taxi': typeof OutstationTaxiRoute
+  '/taxi-service': typeof TaxiServiceRoute
+  '/vehicles': typeof VehiclesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/airport-taxi'
+    | '/char-dham-yatra'
+    | '/contact'
+    | '/faq'
+    | '/kotdwar-to-dehradun-taxi'
+    | '/kotdwar-to-delhi-taxi'
+    | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-lansdowne-taxi'
+    | '/kotdwar-to-rishikesh-taxi'
+    | '/outstation-taxi'
+    | '/taxi-service'
+    | '/vehicles'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/airport-taxi'
+    | '/char-dham-yatra'
+    | '/contact'
+    | '/faq'
+    | '/kotdwar-to-dehradun-taxi'
+    | '/kotdwar-to-delhi-taxi'
+    | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-lansdowne-taxi'
+    | '/kotdwar-to-rishikesh-taxi'
+    | '/outstation-taxi'
+    | '/taxi-service'
+    | '/vehicles'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/airport-taxi'
+    | '/char-dham-yatra'
+    | '/contact'
+    | '/faq'
+    | '/kotdwar-to-dehradun-taxi'
+    | '/kotdwar-to-delhi-taxi'
+    | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-lansdowne-taxi'
+    | '/kotdwar-to-rishikesh-taxi'
+    | '/outstation-taxi'
+    | '/taxi-service'
+    | '/vehicles'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AirportTaxiRoute: typeof AirportTaxiRoute
+  CharDhamYatraRoute: typeof CharDhamYatraRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  KotdwarToDehradunTaxiRoute: typeof KotdwarToDehradunTaxiRoute
+  KotdwarToDelhiTaxiRoute: typeof KotdwarToDelhiTaxiRoute
+  KotdwarToHaridwarTaxiRoute: typeof KotdwarToHaridwarTaxiRoute
+  KotdwarToLansdowneTaxiRoute: typeof KotdwarToLansdowneTaxiRoute
+  KotdwarToRishikeshTaxiRoute: typeof KotdwarToRishikeshTaxiRoute
+  OutstationTaxiRoute: typeof OutstationTaxiRoute
+  TaxiServiceRoute: typeof TaxiServiceRoute
+  VehiclesRoute: typeof VehiclesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/airport-taxi': {
+      id: '/airport-taxi'
+      path: '/airport-taxi'
+      fullPath: '/airport-taxi'
+      preLoaderRoute: typeof AirportTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/char-dham-yatra': {
+      id: '/char-dham-yatra'
+      path: '/char-dham-yatra'
+      fullPath: '/char-dham-yatra'
+      preLoaderRoute: typeof CharDhamYatraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-dehradun-taxi': {
+      id: '/kotdwar-to-dehradun-taxi'
+      path: '/kotdwar-to-dehradun-taxi'
+      fullPath: '/kotdwar-to-dehradun-taxi'
+      preLoaderRoute: typeof KotdwarToDehradunTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-delhi-taxi': {
+      id: '/kotdwar-to-delhi-taxi'
+      path: '/kotdwar-to-delhi-taxi'
+      fullPath: '/kotdwar-to-delhi-taxi'
+      preLoaderRoute: typeof KotdwarToDelhiTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-haridwar-taxi': {
+      id: '/kotdwar-to-haridwar-taxi'
+      path: '/kotdwar-to-haridwar-taxi'
+      fullPath: '/kotdwar-to-haridwar-taxi'
+      preLoaderRoute: typeof KotdwarToHaridwarTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-lansdowne-taxi': {
+      id: '/kotdwar-to-lansdowne-taxi'
+      path: '/kotdwar-to-lansdowne-taxi'
+      fullPath: '/kotdwar-to-lansdowne-taxi'
+      preLoaderRoute: typeof KotdwarToLansdowneTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-rishikesh-taxi': {
+      id: '/kotdwar-to-rishikesh-taxi'
+      path: '/kotdwar-to-rishikesh-taxi'
+      fullPath: '/kotdwar-to-rishikesh-taxi'
+      preLoaderRoute: typeof KotdwarToRishikeshTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outstation-taxi': {
+      id: '/outstation-taxi'
+      path: '/outstation-taxi'
+      fullPath: '/outstation-taxi'
+      preLoaderRoute: typeof OutstationTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/taxi-service': {
+      id: '/taxi-service'
+      path: '/taxi-service'
+      fullPath: '/taxi-service'
+      preLoaderRoute: typeof TaxiServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vehicles': {
+      id: '/vehicles'
+      path: '/vehicles'
+      fullPath: '/vehicles'
+      preLoaderRoute: typeof VehiclesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AirportTaxiRoute: AirportTaxiRoute,
+  CharDhamYatraRoute: CharDhamYatraRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  KotdwarToDehradunTaxiRoute: KotdwarToDehradunTaxiRoute,
+  KotdwarToDelhiTaxiRoute: KotdwarToDelhiTaxiRoute,
+  KotdwarToHaridwarTaxiRoute: KotdwarToHaridwarTaxiRoute,
+  KotdwarToLansdowneTaxiRoute: KotdwarToLansdowneTaxiRoute,
+  KotdwarToRishikeshTaxiRoute: KotdwarToRishikeshTaxiRoute,
+  OutstationTaxiRoute: OutstationTaxiRoute,
+  TaxiServiceRoute: TaxiServiceRoute,
+  VehiclesRoute: VehiclesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
