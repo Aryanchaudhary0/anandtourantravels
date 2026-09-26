@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { RoutePage } from "@/components/site/pages";
-import { createPageHead } from "@/components/site/seo";
+import { routeHead } from "@/components/site/seo";
+import { getRoute } from "@/data/routes";
+
+const page = getRoute("kotdwar-to-haridwar-taxi");
 
 export const Route = createFileRoute("/kotdwar-to-haridwar-taxi")({
-  component: () => <RoutePage pageKey="/kotdwar-to-haridwar-taxi" />,
-  head: () => createPageHead("Kotdwar to Haridwar Taxi", "Book a one-way taxi from Kotdwar to Haridwar with exact Swift Dzire and Maruti Ertiga fares.", "/kotdwar-to-haridwar-taxi"),
+  component: () => <RoutePage slug="kotdwar-to-haridwar-taxi" />,
+  head: () => page ? routeHead(page) : {},
 });
