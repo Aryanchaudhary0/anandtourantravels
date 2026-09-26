@@ -15,12 +15,17 @@ import { Route as AirportTaxiRouteImport } from './routes/airport-taxi'
 import { Route as CharDhamYatraRouteImport } from './routes/char-dham-yatra'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as KotdwarToBadrinathTaxiRouteImport } from './routes/kotdwar-to-badrinath-taxi'
 import { Route as KotdwarToDehradunTaxiRouteImport } from './routes/kotdwar-to-dehradun-taxi'
 import { Route as KotdwarToDelhiTaxiRouteImport } from './routes/kotdwar-to-delhi-taxi'
+import { Route as KotdwarToGangotriTaxiRouteImport } from './routes/kotdwar-to-gangotri-taxi'
 import { Route as KotdwarToHaridwarTaxiRouteImport } from './routes/kotdwar-to-haridwar-taxi'
+import { Route as KotdwarToKedarnathTaxiRouteImport } from './routes/kotdwar-to-kedarnath-taxi'
 import { Route as KotdwarToLansdowneTaxiRouteImport } from './routes/kotdwar-to-lansdowne-taxi'
 import { Route as KotdwarToRishikeshTaxiRouteImport } from './routes/kotdwar-to-rishikesh-taxi'
+import { Route as KotdwarToYamunotriTaxiRouteImport } from './routes/kotdwar-to-yamunotri-taxi'
 import { Route as OutstationTaxiRouteImport } from './routes/outstation-taxi'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TaxiServiceRouteImport } from './routes/taxi-service'
 import { Route as VehiclesRouteImport } from './routes/vehicles'
 
@@ -54,6 +59,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KotdwarToBadrinathTaxiRoute = KotdwarToBadrinathTaxiRouteImport.update({
+  id: '/kotdwar-to-badrinath-taxi',
+  path: '/kotdwar-to-badrinath-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KotdwarToDehradunTaxiRoute = KotdwarToDehradunTaxiRouteImport.update({
   id: '/kotdwar-to-dehradun-taxi',
   path: '/kotdwar-to-dehradun-taxi',
@@ -64,9 +74,19 @@ const KotdwarToDelhiTaxiRoute = KotdwarToDelhiTaxiRouteImport.update({
   path: '/kotdwar-to-delhi-taxi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KotdwarToGangotriTaxiRoute = KotdwarToGangotriTaxiRouteImport.update({
+  id: '/kotdwar-to-gangotri-taxi',
+  path: '/kotdwar-to-gangotri-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KotdwarToHaridwarTaxiRoute = KotdwarToHaridwarTaxiRouteImport.update({
   id: '/kotdwar-to-haridwar-taxi',
   path: '/kotdwar-to-haridwar-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToKedarnathTaxiRoute = KotdwarToKedarnathTaxiRouteImport.update({
+  id: '/kotdwar-to-kedarnath-taxi',
+  path: '/kotdwar-to-kedarnath-taxi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KotdwarToLansdowneTaxiRoute = KotdwarToLansdowneTaxiRouteImport.update({
@@ -79,9 +99,19 @@ const KotdwarToRishikeshTaxiRoute = KotdwarToRishikeshTaxiRouteImport.update({
   path: '/kotdwar-to-rishikesh-taxi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KotdwarToYamunotriTaxiRoute = KotdwarToYamunotriTaxiRouteImport.update({
+  id: '/kotdwar-to-yamunotri-taxi',
+  path: '/kotdwar-to-yamunotri-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutstationTaxiRoute = OutstationTaxiRouteImport.update({
   id: '/outstation-taxi',
   path: '/outstation-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TaxiServiceRoute = TaxiServiceRouteImport.update({
@@ -102,12 +132,17 @@ export interface FileRoutesByFullPath {
   '/char-dham-yatra': typeof CharDhamYatraRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/kotdwar-to-badrinath-taxi': typeof KotdwarToBadrinathTaxiRoute
   '/kotdwar-to-dehradun-taxi': typeof KotdwarToDehradunTaxiRoute
   '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
+  '/kotdwar-to-gangotri-taxi': typeof KotdwarToGangotriTaxiRoute
   '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-kedarnath-taxi': typeof KotdwarToKedarnathTaxiRoute
   '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
   '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
+  '/kotdwar-to-yamunotri-taxi': typeof KotdwarToYamunotriTaxiRoute
   '/outstation-taxi': typeof OutstationTaxiRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/taxi-service': typeof TaxiServiceRoute
   '/vehicles': typeof VehiclesRoute
 }
@@ -118,12 +153,17 @@ export interface FileRoutesByTo {
   '/char-dham-yatra': typeof CharDhamYatraRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/kotdwar-to-badrinath-taxi': typeof KotdwarToBadrinathTaxiRoute
   '/kotdwar-to-dehradun-taxi': typeof KotdwarToDehradunTaxiRoute
   '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
+  '/kotdwar-to-gangotri-taxi': typeof KotdwarToGangotriTaxiRoute
   '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-kedarnath-taxi': typeof KotdwarToKedarnathTaxiRoute
   '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
   '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
+  '/kotdwar-to-yamunotri-taxi': typeof KotdwarToYamunotriTaxiRoute
   '/outstation-taxi': typeof OutstationTaxiRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/taxi-service': typeof TaxiServiceRoute
   '/vehicles': typeof VehiclesRoute
 }
@@ -135,12 +175,17 @@ export interface FileRoutesById {
   '/char-dham-yatra': typeof CharDhamYatraRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/kotdwar-to-badrinath-taxi': typeof KotdwarToBadrinathTaxiRoute
   '/kotdwar-to-dehradun-taxi': typeof KotdwarToDehradunTaxiRoute
   '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
+  '/kotdwar-to-gangotri-taxi': typeof KotdwarToGangotriTaxiRoute
   '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-kedarnath-taxi': typeof KotdwarToKedarnathTaxiRoute
   '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
   '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
+  '/kotdwar-to-yamunotri-taxi': typeof KotdwarToYamunotriTaxiRoute
   '/outstation-taxi': typeof OutstationTaxiRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/taxi-service': typeof TaxiServiceRoute
   '/vehicles': typeof VehiclesRoute
 }
@@ -153,12 +198,17 @@ export interface FileRouteTypes {
     | '/char-dham-yatra'
     | '/contact'
     | '/faq'
+    | '/kotdwar-to-badrinath-taxi'
     | '/kotdwar-to-dehradun-taxi'
     | '/kotdwar-to-delhi-taxi'
+    | '/kotdwar-to-gangotri-taxi'
     | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-kedarnath-taxi'
     | '/kotdwar-to-lansdowne-taxi'
     | '/kotdwar-to-rishikesh-taxi'
+    | '/kotdwar-to-yamunotri-taxi'
     | '/outstation-taxi'
+    | '/sitemap.xml'
     | '/taxi-service'
     | '/vehicles'
   fileRoutesByTo: FileRoutesByTo
@@ -169,12 +219,17 @@ export interface FileRouteTypes {
     | '/char-dham-yatra'
     | '/contact'
     | '/faq'
+    | '/kotdwar-to-badrinath-taxi'
     | '/kotdwar-to-dehradun-taxi'
     | '/kotdwar-to-delhi-taxi'
+    | '/kotdwar-to-gangotri-taxi'
     | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-kedarnath-taxi'
     | '/kotdwar-to-lansdowne-taxi'
     | '/kotdwar-to-rishikesh-taxi'
+    | '/kotdwar-to-yamunotri-taxi'
     | '/outstation-taxi'
+    | '/sitemap.xml'
     | '/taxi-service'
     | '/vehicles'
   id:
@@ -185,12 +240,17 @@ export interface FileRouteTypes {
     | '/char-dham-yatra'
     | '/contact'
     | '/faq'
+    | '/kotdwar-to-badrinath-taxi'
     | '/kotdwar-to-dehradun-taxi'
     | '/kotdwar-to-delhi-taxi'
+    | '/kotdwar-to-gangotri-taxi'
     | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-kedarnath-taxi'
     | '/kotdwar-to-lansdowne-taxi'
     | '/kotdwar-to-rishikesh-taxi'
+    | '/kotdwar-to-yamunotri-taxi'
     | '/outstation-taxi'
+    | '/sitemap.xml'
     | '/taxi-service'
     | '/vehicles'
   fileRoutesById: FileRoutesById
@@ -202,12 +262,17 @@ export interface RootRouteChildren {
   CharDhamYatraRoute: typeof CharDhamYatraRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  KotdwarToBadrinathTaxiRoute: typeof KotdwarToBadrinathTaxiRoute
   KotdwarToDehradunTaxiRoute: typeof KotdwarToDehradunTaxiRoute
   KotdwarToDelhiTaxiRoute: typeof KotdwarToDelhiTaxiRoute
+  KotdwarToGangotriTaxiRoute: typeof KotdwarToGangotriTaxiRoute
   KotdwarToHaridwarTaxiRoute: typeof KotdwarToHaridwarTaxiRoute
+  KotdwarToKedarnathTaxiRoute: typeof KotdwarToKedarnathTaxiRoute
   KotdwarToLansdowneTaxiRoute: typeof KotdwarToLansdowneTaxiRoute
   KotdwarToRishikeshTaxiRoute: typeof KotdwarToRishikeshTaxiRoute
+  KotdwarToYamunotriTaxiRoute: typeof KotdwarToYamunotriTaxiRoute
   OutstationTaxiRoute: typeof OutstationTaxiRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TaxiServiceRoute: typeof TaxiServiceRoute
   VehiclesRoute: typeof VehiclesRoute
 }
@@ -256,6 +321,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kotdwar-to-badrinath-taxi': {
+      id: '/kotdwar-to-badrinath-taxi'
+      path: '/kotdwar-to-badrinath-taxi'
+      fullPath: '/kotdwar-to-badrinath-taxi'
+      preLoaderRoute: typeof KotdwarToBadrinathTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kotdwar-to-dehradun-taxi': {
       id: '/kotdwar-to-dehradun-taxi'
       path: '/kotdwar-to-dehradun-taxi'
@@ -270,11 +342,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KotdwarToDelhiTaxiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kotdwar-to-gangotri-taxi': {
+      id: '/kotdwar-to-gangotri-taxi'
+      path: '/kotdwar-to-gangotri-taxi'
+      fullPath: '/kotdwar-to-gangotri-taxi'
+      preLoaderRoute: typeof KotdwarToGangotriTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kotdwar-to-haridwar-taxi': {
       id: '/kotdwar-to-haridwar-taxi'
       path: '/kotdwar-to-haridwar-taxi'
       fullPath: '/kotdwar-to-haridwar-taxi'
       preLoaderRoute: typeof KotdwarToHaridwarTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-kedarnath-taxi': {
+      id: '/kotdwar-to-kedarnath-taxi'
+      path: '/kotdwar-to-kedarnath-taxi'
+      fullPath: '/kotdwar-to-kedarnath-taxi'
+      preLoaderRoute: typeof KotdwarToKedarnathTaxiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kotdwar-to-lansdowne-taxi': {
@@ -291,11 +377,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KotdwarToRishikeshTaxiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kotdwar-to-yamunotri-taxi': {
+      id: '/kotdwar-to-yamunotri-taxi'
+      path: '/kotdwar-to-yamunotri-taxi'
+      fullPath: '/kotdwar-to-yamunotri-taxi'
+      preLoaderRoute: typeof KotdwarToYamunotriTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outstation-taxi': {
       id: '/outstation-taxi'
       path: '/outstation-taxi'
       fullPath: '/outstation-taxi'
       preLoaderRoute: typeof OutstationTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/taxi-service': {
@@ -322,12 +422,17 @@ const rootRouteChildren: RootRouteChildren = {
   CharDhamYatraRoute: CharDhamYatraRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  KotdwarToBadrinathTaxiRoute: KotdwarToBadrinathTaxiRoute,
   KotdwarToDehradunTaxiRoute: KotdwarToDehradunTaxiRoute,
   KotdwarToDelhiTaxiRoute: KotdwarToDelhiTaxiRoute,
+  KotdwarToGangotriTaxiRoute: KotdwarToGangotriTaxiRoute,
   KotdwarToHaridwarTaxiRoute: KotdwarToHaridwarTaxiRoute,
+  KotdwarToKedarnathTaxiRoute: KotdwarToKedarnathTaxiRoute,
   KotdwarToLansdowneTaxiRoute: KotdwarToLansdowneTaxiRoute,
   KotdwarToRishikeshTaxiRoute: KotdwarToRishikeshTaxiRoute,
+  KotdwarToYamunotriTaxiRoute: KotdwarToYamunotriTaxiRoute,
   OutstationTaxiRoute: OutstationTaxiRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TaxiServiceRoute: TaxiServiceRoute,
   VehiclesRoute: VehiclesRoute,
 }
