@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { business } from "../config/business";
 
 function NotFoundComponent() {
   return (
@@ -94,6 +95,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": ["TravelAgency", "TaxiService", "LocalBusiness"],
+        "@id": `${business.siteUrl}/#business`,
+        name: business.name,
+        image: `${business.siteUrl}/images/himalayan-road-hero.jpg`,
+        telephone: business.phoneDisplay,
+        url: business.siteUrl,
+        priceRange: "₹₹",
+        address: { "@type": "PostalAddress", ...business.address },
+        areaServed: ["Kotdwar", "Haridwar", "Rishikesh", "Uttarakhand", "Delhi NCR"],
+        openingHours: business.openingHours,
+      }),
+    }],
   }),
   shellComponent: RootShell,
   component: RootComponent,

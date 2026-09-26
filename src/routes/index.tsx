@@ -4,5 +4,5 @@ import { createPageHead } from "@/components/site/seo";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
-  head: () => createPageHead("Taxi Service in Kotdwar, Uttarakhand", "Book safe and comfortable taxis from Kotdwar for local trips, outstation travel, airport transfers, and Char Dham Yatra.", "/", true),
+  head: () => createPageHead("Best Cab Service in Kotdwar, Uttarakhand", "Book the best cab service in Kotdwar for local trips, outstation travel, airport transfers, and Char Dham Yatra from Haridwar and Rishikesh.", "/", { image: "/images/himalayan-road-hero.jpg", imageAlt: "Anand Tour & Travel taxi route through the Uttarakhand Himalayas" }),
 });

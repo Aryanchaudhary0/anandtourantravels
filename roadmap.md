@@ -6,4 +6,5 @@
 - [x] Add all requested service, route, fleet, about, contact, and FAQ pages.
 - [x] Add unique page metadata and LocalBusiness structured data.
 - [x] Verify compile, booking interaction, and responsive widths.
-- [ ] Add sitemap after a real public site URL exists.
+- [x] Add sitemap after a real public site URL exists.
+- [x] Complete Himalayan palette, local shrine imagery, central route pages, structured data, and live sitemap.

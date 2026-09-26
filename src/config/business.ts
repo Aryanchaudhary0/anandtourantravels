@@ -1,11 +1,21 @@
 export const business = {
   name: "Anand Tour & Travel",
   tagline: "Your Journey. Our Responsibility.",
+  siteUrl: "https://anandtourandtravel.in",
   phoneDisplay: "+91 73021 93159",
   phone: "+917302193159",
   whatsapp: "917302193159",
   location: "Kotdwar, Uttarakhand, India",
   shortLocation: "Kotdwar, Uttarakhand",
+  address: {
+    streetAddress: "BSNL Tower, near Jal Nigam Store, Ekta Puram Colony, Shibu Nagar",
+    addressLocality: "Kotdwar",
+    addressRegion: "Uttarakhand",
+    postalCode: "246149",
+    addressCountry: "IN",
+  },
+  openingHours: "Mo-Su 00:00-23:59",
+  mapsUrl: "https://www.google.com/maps/place/Anand+tour+and+travels,+bsnl+tower,+near+jalnigam+store,+Ekta+Puram+Colony,+Shibu+Nagar,+Kotdwar,+Uttarakhand+246149/data=!4m2!3m1!1s0x39097d6551b992b1:0xba911fd8659253c4!18m1!1e1",
   announcement: "Planning an Uttarakhand trip? Ask us for a comfortable taxi plan tailored to your route.",
 } as const;
 
@@ -64,13 +74,6 @@ export const services = [
   { title: "Lansdowne Day Tours", description: "A relaxed hill getaway from Kotdwar with a local driver.", href: "/kotdwar-to-lansdowne-taxi" },
 ] as const;
 
-export const charDhams = [
-  { name: "Kedarnath", description: "Taxi service to Sonprayag for the Kedarnath pilgrimage route." },
-  { name: "Badrinath", description: "A scenic journey through the Alaknanda valley to Badrinath." },
-  { name: "Gangotri", description: "Plan a comfortable road journey to the source of the Ganga." },
-  { name: "Yamunotri", description: "Taxi travel to Janki Chatti for the Yamunotri route." },
-] as const;
-
 export const rateTerms = [
   "Toll, Parking, State Tax extra.",
   "Night charge ₹300 (10 PM–5 AM).",
@@ -85,14 +88,6 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
-
-export const routePages = {
-  "/kotdwar-to-lansdowne-taxi": { destination: "Lansdowne", dzire: 2200, ertiga: 3000, intro: "Book a comfortable hill taxi from Kotdwar to Lansdowne for a relaxed day trip, stay, or onward journey." },
-  "/kotdwar-to-delhi-taxi": { destination: "Delhi", dzire: 5500, ertiga: 7000, intro: "Travel directly from Kotdwar to Delhi or Delhi Airport with a clean vehicle and an experienced driver." },
-  "/kotdwar-to-dehradun-taxi": { destination: "Dehradun", dzire: 4000, ertiga: 5500, intro: "Reserve a one-way taxi from Kotdwar to Dehradun, with Mussoorie and Dhanaulti covered at the same listed fare." },
-  "/kotdwar-to-haridwar-taxi": { destination: "Haridwar", dzire: 2500, ertiga: 3500, intro: "Book a direct taxi from Kotdwar to Haridwar for railway transfers, temple visits, or onward travel." },
-  "/kotdwar-to-rishikesh-taxi": { destination: "Rishikesh", dzire: 2500, ertiga: 3500, intro: "Travel from Kotdwar to Rishikesh with convenient doorstep pickup and transparent one-way fares." },
-} as const;
 
 export function formatPrice(price: number) {
   return `₹${price.toLocaleString("en-IN")}`;

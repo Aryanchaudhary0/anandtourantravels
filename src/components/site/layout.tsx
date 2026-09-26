@@ -37,7 +37,7 @@ export function Header() {
 
 export function Footer() {
   const quick = [{ label: "About", href: "/about" }, { label: "Contact", href: "/contact" }, { label: "FAQ", href: "/faq" }, { label: "Vehicles", href: "/vehicles" }];
-  const routes = [{ label: "Lansdowne", href: "/kotdwar-to-lansdowne-taxi" }, { label: "Delhi", href: "/kotdwar-to-delhi-taxi" }, { label: "Dehradun", href: "/kotdwar-to-dehradun-taxi" }, { label: "Haridwar", href: "/kotdwar-to-haridwar-taxi" }];
+  const routes = [{ label: "Lansdowne", href: "/kotdwar-to-lansdowne-taxi" }, { label: "Delhi", href: "/kotdwar-to-delhi-taxi" }, { label: "Kedarnath", href: "/kotdwar-to-kedarnath-taxi" }, { label: "Badrinath", href: "/kotdwar-to-badrinath-taxi" }];
   return <footer className="bg-primary pb-24 text-primary-foreground md:pb-0">
     <div className="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
       <div><div className="mb-4 flex items-center gap-2"><Mountain className="size-7 text-accent" /><strong className="font-display">ANAND TOUR & TRAVEL</strong></div><p className="max-w-xs text-sm leading-6 text-primary-foreground/70">{business.tagline}<br />Safe and comfortable taxi travel from {business.shortLocation}.</p></div>
