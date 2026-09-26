@@ -4,6 +4,7 @@ import type { TravelRoute } from "@/data/routes";
 type HeadOptions = {
   image?: string;
   imageAlt?: string;
+  keywords?: string[];
   schemas?: Record<string, unknown>[];
 };
 
@@ -16,10 +17,12 @@ export function createPageHead(title: string, description: string, path: string,
   const normalizedOptions = typeof options === "boolean" ? {} : options;
   const canonical = absoluteUrl(path);
   const image = normalizedOptions.image ? absoluteUrl(normalizedOptions.image) : undefined;
+  const schemas = [...(path === "/" ? [] : [breadcrumbSchema([{ name: "Home", path: "/" }, { name: title, path }])]), ...(normalizedOptions.schemas ?? [])];
   return {
     meta: [
       { title: fullTitle },
       { name: "description", content: description },
+      ...(normalizedOptions.keywords?.length ? [{ name: "keywords", content: normalizedOptions.keywords.join(", ") }] : []),
       { property: "og:title", content: fullTitle },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
@@ -31,7 +34,7 @@ export function createPageHead(title: string, description: string, path: string,
       ...(image ? [{ name: "twitter:image", content: image }, { name: "twitter:image:alt", content: normalizedOptions.imageAlt ?? title }] : []),
     ],
     links: [{ rel: "canonical", href: canonical }],
-    scripts: normalizedOptions.schemas?.map((schema) => ({ type: "application/ld+json", children: JSON.stringify(schema) })),
+    scripts: schemas.map((schema) => ({ type: "application/ld+json", children: JSON.stringify(schema) })),
   };
 }
 
@@ -44,9 +47,9 @@ export function routeHead(route: TravelRoute) {
   return createPageHead(route.metaTitle.replace(` | ${business.name}`, ""), route.metaDescription, path, {
     image: route.socialImage,
     imageAlt: route.imageAlt,
+    keywords: route.keywords,
     schemas: [
       { "@context": "https://schema.org", "@type": "Service", name: route.h1, serviceType: route.h1, description: route.metaDescription, url: absoluteUrl(path), image: absoluteUrl(route.socialImage), provider: { "@type": ["TravelAgency", "TaxiService", "LocalBusiness"], name: business.name, telephone: business.phoneDisplay, url: business.siteUrl }, areaServed: ["Kotdwar", "Haridwar", "Rishikesh", "Uttarakhand"] },
-      breadcrumbSchema([{ name: "Home", path: "/" }, { name: route.destination, path }]),
     ],
   });
 }
