@@ -85,7 +85,7 @@ function Login() {
   </form>;
 }
 
-function NoAccess({ email }: { email?: string }) {
+function NoAccess({ email }: { email: string | undefined }) {
   return <div className="mx-auto max-w-md rounded-xl border bg-card p-6 text-center"><h1 className="font-display text-xl font-bold">No admin access</h1><p className="mt-2 text-sm text-muted-foreground">{email} is not on the approved owner list.</p></div>;
 }
 

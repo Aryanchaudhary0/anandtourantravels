@@ -12,5 +12,6 @@
 # Phase 2 roadmap
 - [x] Cloud tables for rates and offers with public read, admin write
 - [x] Public site reads live rates/banner with static fallback
-- [ ] /admin login + pricing and offer editors
-- [ ] Approve itsmearyanchaudhary@gmail.com as owner (second owner email pending)
+- [x] /admin login + pricing and offer editors
+- [x] Approve itsmearyanchaudhary@gmail.com as owner (second owner email pending)
+- [ ] Add second owner email (waiting on the email)
