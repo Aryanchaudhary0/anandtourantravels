@@ -58,12 +58,12 @@ export const rateTables = vehicles.map((vehicle, vehicleIndex) => ({
 }));
 
 export const popularRoutes = [
-  { destination: "Lansdowne", price: 2200, note: "Quiet hill station escape" },
-  { destination: "Rishikesh / Haridwar", price: 2500, note: "Ganga ghats and spiritual centres" },
-  { destination: "Delhi / Delhi Airport", price: 5500, note: "Direct one-way transfer" },
-  { destination: "Dehradun / Mussoorie", price: 4000, note: "Doon valley and the Queen of Hills" },
-  { destination: "Jim Corbett / Ramnagar", price: 3800, note: "Gateway to Corbett National Park" },
-  { destination: "Kedarnath Sonprayag", price: 8000, note: "Comfortable yatra transfer" },
+  { destination: "Lansdowne", rateKey: "Lansdowne", price: 2200, note: "Quiet hill station escape" },
+  { destination: "Rishikesh / Haridwar", rateKey: "Rishikesh/Haridwar", price: 2500, note: "Ganga ghats and spiritual centres" },
+  { destination: "Delhi / Delhi Airport", rateKey: "Delhi Airport/Delhi", price: 5500, note: "Direct one-way transfer" },
+  { destination: "Dehradun / Mussoorie", rateKey: "Dehradun/Mussoorie/Dhanaulti", price: 4000, note: "Doon valley and the Queen of Hills" },
+  { destination: "Jim Corbett / Ramnagar", rateKey: "Jim Corbett/Ramnagar", price: 3800, note: "Gateway to Corbett National Park" },
+  { destination: "Kedarnath Sonprayag", rateKey: "Kedarnath Sonprayag", price: 8000, note: "Comfortable yatra transfer" },
 ] as const;
 
 export const services = [
