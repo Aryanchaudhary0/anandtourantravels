@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AirportTaxiRouteImport } from './routes/airport-taxi'
 import { Route as CharDhamYatraRouteImport } from './routes/char-dham-yatra'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -37,6 +38,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AirportTaxiRoute = AirportTaxiRouteImport.update({
@@ -128,6 +134,7 @@ const VehiclesRoute = VehiclesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/airport-taxi': typeof AirportTaxiRoute
   '/char-dham-yatra': typeof CharDhamYatraRoute
   '/contact': typeof ContactRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/airport-taxi': typeof AirportTaxiRoute
   '/char-dham-yatra': typeof CharDhamYatraRoute
   '/contact': typeof ContactRoute
@@ -171,6 +179,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/airport-taxi': typeof AirportTaxiRoute
   '/char-dham-yatra': typeof CharDhamYatraRoute
   '/contact': typeof ContactRoute
@@ -194,6 +203,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/airport-taxi'
     | '/char-dham-yatra'
     | '/contact'
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/admin'
     | '/airport-taxi'
     | '/char-dham-yatra'
     | '/contact'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/airport-taxi'
     | '/char-dham-yatra'
     | '/contact'
@@ -258,6 +270,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
   AirportTaxiRoute: typeof AirportTaxiRoute
   CharDhamYatraRoute: typeof CharDhamYatraRoute
   ContactRoute: typeof ContactRoute
@@ -291,6 +304,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/airport-taxi': {
@@ -418,6 +438,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
   AirportTaxiRoute: AirportTaxiRoute,
   CharDhamYatraRoute: CharDhamYatraRoute,
   ContactRoute: ContactRoute,
