@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep all route SEO copy and route-specific journey details in `src/data/routes.ts` so pages, metadata, related links, and sitemap stay synchronized.
+- Keep multi-day tour and Char Dham package definitions in `src/data/packages.ts`; database prices may override these static fallbacks so public pages never render empty.

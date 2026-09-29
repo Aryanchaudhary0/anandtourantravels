@@ -15,3 +15,9 @@
 - [x] /admin login + pricing and offer editors
 - [x] Approve itsmearyanchaudhary@gmail.com as owner (second owner email pending)
 - [ ] Add second owner email (waiting on the email)
+- [x] Connect and embed the exact Google business location
+- [x] Optimize shrine and fleet photos as WebP
+- [x] Add Jim Corbett, Nainital, and Mussoorie route pages
+- [x] Add editable tour and Char Dham package pricing
+- [x] Extend the fleet to Dzire, Ertiga, Innova Crysta, and Tempo Traveller
+- [ ] Verify public pages and authenticated owner editing end to end
