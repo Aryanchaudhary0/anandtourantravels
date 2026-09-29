@@ -21,8 +21,11 @@ import { Route as KotdwarToDehradunTaxiRouteImport } from './routes/kotdwar-to-d
 import { Route as KotdwarToDelhiTaxiRouteImport } from './routes/kotdwar-to-delhi-taxi'
 import { Route as KotdwarToGangotriTaxiRouteImport } from './routes/kotdwar-to-gangotri-taxi'
 import { Route as KotdwarToHaridwarTaxiRouteImport } from './routes/kotdwar-to-haridwar-taxi'
+import { Route as KotdwarToJimCorbettTaxiRouteImport } from './routes/kotdwar-to-jim-corbett-taxi'
 import { Route as KotdwarToKedarnathTaxiRouteImport } from './routes/kotdwar-to-kedarnath-taxi'
 import { Route as KotdwarToLansdowneTaxiRouteImport } from './routes/kotdwar-to-lansdowne-taxi'
+import { Route as KotdwarToMussoorieTaxiRouteImport } from './routes/kotdwar-to-mussoorie-taxi'
+import { Route as KotdwarToNainitalTaxiRouteImport } from './routes/kotdwar-to-nainital-taxi'
 import { Route as KotdwarToRishikeshTaxiRouteImport } from './routes/kotdwar-to-rishikesh-taxi'
 import { Route as KotdwarToYamunotriTaxiRouteImport } from './routes/kotdwar-to-yamunotri-taxi'
 import { Route as OutstationTaxiRouteImport } from './routes/outstation-taxi'
@@ -90,6 +93,11 @@ const KotdwarToHaridwarTaxiRoute = KotdwarToHaridwarTaxiRouteImport.update({
   path: '/kotdwar-to-haridwar-taxi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KotdwarToJimCorbettTaxiRoute = KotdwarToJimCorbettTaxiRouteImport.update({
+  id: '/kotdwar-to-jim-corbett-taxi',
+  path: '/kotdwar-to-jim-corbett-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KotdwarToKedarnathTaxiRoute = KotdwarToKedarnathTaxiRouteImport.update({
   id: '/kotdwar-to-kedarnath-taxi',
   path: '/kotdwar-to-kedarnath-taxi',
@@ -98,6 +106,16 @@ const KotdwarToKedarnathTaxiRoute = KotdwarToKedarnathTaxiRouteImport.update({
 const KotdwarToLansdowneTaxiRoute = KotdwarToLansdowneTaxiRouteImport.update({
   id: '/kotdwar-to-lansdowne-taxi',
   path: '/kotdwar-to-lansdowne-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToMussoorieTaxiRoute = KotdwarToMussoorieTaxiRouteImport.update({
+  id: '/kotdwar-to-mussoorie-taxi',
+  path: '/kotdwar-to-mussoorie-taxi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KotdwarToNainitalTaxiRoute = KotdwarToNainitalTaxiRouteImport.update({
+  id: '/kotdwar-to-nainital-taxi',
+  path: '/kotdwar-to-nainital-taxi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KotdwarToRishikeshTaxiRoute = KotdwarToRishikeshTaxiRouteImport.update({
@@ -144,8 +162,11 @@ export interface FileRoutesByFullPath {
   '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
   '/kotdwar-to-gangotri-taxi': typeof KotdwarToGangotriTaxiRoute
   '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-jim-corbett-taxi': typeof KotdwarToJimCorbettTaxiRoute
   '/kotdwar-to-kedarnath-taxi': typeof KotdwarToKedarnathTaxiRoute
   '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
+  '/kotdwar-to-mussoorie-taxi': typeof KotdwarToMussoorieTaxiRoute
+  '/kotdwar-to-nainital-taxi': typeof KotdwarToNainitalTaxiRoute
   '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
   '/kotdwar-to-yamunotri-taxi': typeof KotdwarToYamunotriTaxiRoute
   '/outstation-taxi': typeof OutstationTaxiRoute
@@ -166,8 +187,11 @@ export interface FileRoutesByTo {
   '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
   '/kotdwar-to-gangotri-taxi': typeof KotdwarToGangotriTaxiRoute
   '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-jim-corbett-taxi': typeof KotdwarToJimCorbettTaxiRoute
   '/kotdwar-to-kedarnath-taxi': typeof KotdwarToKedarnathTaxiRoute
   '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
+  '/kotdwar-to-mussoorie-taxi': typeof KotdwarToMussoorieTaxiRoute
+  '/kotdwar-to-nainital-taxi': typeof KotdwarToNainitalTaxiRoute
   '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
   '/kotdwar-to-yamunotri-taxi': typeof KotdwarToYamunotriTaxiRoute
   '/outstation-taxi': typeof OutstationTaxiRoute
@@ -189,8 +213,11 @@ export interface FileRoutesById {
   '/kotdwar-to-delhi-taxi': typeof KotdwarToDelhiTaxiRoute
   '/kotdwar-to-gangotri-taxi': typeof KotdwarToGangotriTaxiRoute
   '/kotdwar-to-haridwar-taxi': typeof KotdwarToHaridwarTaxiRoute
+  '/kotdwar-to-jim-corbett-taxi': typeof KotdwarToJimCorbettTaxiRoute
   '/kotdwar-to-kedarnath-taxi': typeof KotdwarToKedarnathTaxiRoute
   '/kotdwar-to-lansdowne-taxi': typeof KotdwarToLansdowneTaxiRoute
+  '/kotdwar-to-mussoorie-taxi': typeof KotdwarToMussoorieTaxiRoute
+  '/kotdwar-to-nainital-taxi': typeof KotdwarToNainitalTaxiRoute
   '/kotdwar-to-rishikesh-taxi': typeof KotdwarToRishikeshTaxiRoute
   '/kotdwar-to-yamunotri-taxi': typeof KotdwarToYamunotriTaxiRoute
   '/outstation-taxi': typeof OutstationTaxiRoute
@@ -213,8 +240,11 @@ export interface FileRouteTypes {
     | '/kotdwar-to-delhi-taxi'
     | '/kotdwar-to-gangotri-taxi'
     | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-jim-corbett-taxi'
     | '/kotdwar-to-kedarnath-taxi'
     | '/kotdwar-to-lansdowne-taxi'
+    | '/kotdwar-to-mussoorie-taxi'
+    | '/kotdwar-to-nainital-taxi'
     | '/kotdwar-to-rishikesh-taxi'
     | '/kotdwar-to-yamunotri-taxi'
     | '/outstation-taxi'
@@ -235,8 +265,11 @@ export interface FileRouteTypes {
     | '/kotdwar-to-delhi-taxi'
     | '/kotdwar-to-gangotri-taxi'
     | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-jim-corbett-taxi'
     | '/kotdwar-to-kedarnath-taxi'
     | '/kotdwar-to-lansdowne-taxi'
+    | '/kotdwar-to-mussoorie-taxi'
+    | '/kotdwar-to-nainital-taxi'
     | '/kotdwar-to-rishikesh-taxi'
     | '/kotdwar-to-yamunotri-taxi'
     | '/outstation-taxi'
@@ -257,8 +290,11 @@ export interface FileRouteTypes {
     | '/kotdwar-to-delhi-taxi'
     | '/kotdwar-to-gangotri-taxi'
     | '/kotdwar-to-haridwar-taxi'
+    | '/kotdwar-to-jim-corbett-taxi'
     | '/kotdwar-to-kedarnath-taxi'
     | '/kotdwar-to-lansdowne-taxi'
+    | '/kotdwar-to-mussoorie-taxi'
+    | '/kotdwar-to-nainital-taxi'
     | '/kotdwar-to-rishikesh-taxi'
     | '/kotdwar-to-yamunotri-taxi'
     | '/outstation-taxi'
@@ -280,8 +316,11 @@ export interface RootRouteChildren {
   KotdwarToDelhiTaxiRoute: typeof KotdwarToDelhiTaxiRoute
   KotdwarToGangotriTaxiRoute: typeof KotdwarToGangotriTaxiRoute
   KotdwarToHaridwarTaxiRoute: typeof KotdwarToHaridwarTaxiRoute
+  KotdwarToJimCorbettTaxiRoute: typeof KotdwarToJimCorbettTaxiRoute
   KotdwarToKedarnathTaxiRoute: typeof KotdwarToKedarnathTaxiRoute
   KotdwarToLansdowneTaxiRoute: typeof KotdwarToLansdowneTaxiRoute
+  KotdwarToMussoorieTaxiRoute: typeof KotdwarToMussoorieTaxiRoute
+  KotdwarToNainitalTaxiRoute: typeof KotdwarToNainitalTaxiRoute
   KotdwarToRishikeshTaxiRoute: typeof KotdwarToRishikeshTaxiRoute
   KotdwarToYamunotriTaxiRoute: typeof KotdwarToYamunotriTaxiRoute
   OutstationTaxiRoute: typeof OutstationTaxiRoute
@@ -376,6 +415,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KotdwarToHaridwarTaxiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kotdwar-to-jim-corbett-taxi': {
+      id: '/kotdwar-to-jim-corbett-taxi'
+      path: '/kotdwar-to-jim-corbett-taxi'
+      fullPath: '/kotdwar-to-jim-corbett-taxi'
+      preLoaderRoute: typeof KotdwarToJimCorbettTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kotdwar-to-kedarnath-taxi': {
       id: '/kotdwar-to-kedarnath-taxi'
       path: '/kotdwar-to-kedarnath-taxi'
@@ -388,6 +434,20 @@ declare module '@tanstack/react-router' {
       path: '/kotdwar-to-lansdowne-taxi'
       fullPath: '/kotdwar-to-lansdowne-taxi'
       preLoaderRoute: typeof KotdwarToLansdowneTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-mussoorie-taxi': {
+      id: '/kotdwar-to-mussoorie-taxi'
+      path: '/kotdwar-to-mussoorie-taxi'
+      fullPath: '/kotdwar-to-mussoorie-taxi'
+      preLoaderRoute: typeof KotdwarToMussoorieTaxiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kotdwar-to-nainital-taxi': {
+      id: '/kotdwar-to-nainital-taxi'
+      path: '/kotdwar-to-nainital-taxi'
+      fullPath: '/kotdwar-to-nainital-taxi'
+      preLoaderRoute: typeof KotdwarToNainitalTaxiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kotdwar-to-rishikesh-taxi': {
@@ -448,8 +508,11 @@ const rootRouteChildren: RootRouteChildren = {
   KotdwarToDelhiTaxiRoute: KotdwarToDelhiTaxiRoute,
   KotdwarToGangotriTaxiRoute: KotdwarToGangotriTaxiRoute,
   KotdwarToHaridwarTaxiRoute: KotdwarToHaridwarTaxiRoute,
+  KotdwarToJimCorbettTaxiRoute: KotdwarToJimCorbettTaxiRoute,
   KotdwarToKedarnathTaxiRoute: KotdwarToKedarnathTaxiRoute,
   KotdwarToLansdowneTaxiRoute: KotdwarToLansdowneTaxiRoute,
+  KotdwarToMussoorieTaxiRoute: KotdwarToMussoorieTaxiRoute,
+  KotdwarToNainitalTaxiRoute: KotdwarToNainitalTaxiRoute,
   KotdwarToRishikeshTaxiRoute: KotdwarToRishikeshTaxiRoute,
   KotdwarToYamunotriTaxiRoute: KotdwarToYamunotriTaxiRoute,
   OutstationTaxiRoute: OutstationTaxiRoute,
