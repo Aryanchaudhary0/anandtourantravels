@@ -90,9 +90,35 @@ function NoAccess({ email }: { email: string | undefined }) {
 }
 
 type Rate = { id: string; route_name: string; vehicle_type: string; price: number };
+type PricingItem = { id: string; item_key: string; category: string; title: string; vehicle_type: string; price: number; pricing_unit: string; is_active: boolean };
 
 function Dashboard() {
-  return <div className="grid gap-8"><OfferEditor /><RatesEditor /></div>;
+  return <div className="grid gap-8"><OfferEditor /><RatesEditor /><PricingItemsEditor /></div>;
+}
+
+function PricingItemsEditor() {
+  const [items, setItems] = useState<PricingItem[]>([]);
+  const [edits, setEdits] = useState<Record<string, string>>({});
+  const [saving, setSaving] = useState(false);
+  async function load() {
+    const { data, error } = await supabase.from("pricing_items").select("id, item_key, category, title, vehicle_type, price, pricing_unit, is_active").order("category").order("sort_order");
+    if (error) toast.error(error.message); else setItems(data);
+  }
+  useEffect(() => { load(); }, []);
+  const changed = Object.entries(edits).filter(([id, value]) => items.find((item) => item.id === id)?.price !== Number(value));
+  async function saveAll() {
+    for (const [, value] of changed) if (!/^\d+$/.test(value)) { toast.error("Prices must be whole numbers."); return; }
+    setSaving(true);
+    const results = await Promise.all(changed.map(([id, value]) => supabase.from("pricing_items").update({ price: Number(value) }).eq("id", id)));
+    setSaving(false);
+    const failed = results.find((result) => result.error);
+    if (failed?.error) toast.error(failed.error.message); else { toast.success(`${changed.length} package price(s) saved`); setEdits({}); load(); }
+  }
+  const groups = [...new Set(items.map((item) => item.category))];
+  return <section className="rounded-xl border bg-card p-5 sm:p-6">
+    <div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-display text-xl font-bold">Tours, transfers and yatra packages</h2><p className="mt-1 text-sm text-muted-foreground">Edit every fixed package price shown on the public site.</p></div><Button onClick={saveAll} disabled={saving || changed.length === 0}><Save /> {saving ? "Saving…" : `Save changes${changed.length ? ` (${changed.length})` : ""}`}</Button></div>
+    <div className="mt-5 grid gap-6 lg:grid-cols-2">{groups.map((group) => <div key={group}><h3 className="mb-2 font-display font-bold text-accent">{group}</h3><div className="divide-y rounded-lg border">{items.filter((item) => item.category === group).map((item) => { const value=edits[item.id] ?? String(item.price); return <label key={item.id} className="grid grid-cols-[minmax(0,1fr)_7.5rem] items-center gap-3 p-3"><span className="min-w-0 text-sm font-medium">{item.title}<small className="block text-muted-foreground">{item.vehicle_type} · {item.pricing_unit}</small></span><Input inputMode="numeric" aria-label={`${item.title} ${item.vehicle_type} price`} value={value} onChange={(event) => setEdits({...edits,[item.id]:event.target.value.replace(/[^\d]/g,"")})} className={value !== String(item.price) ? "border-accent" : ""}/></label>; })}</div></div>)}</div>
+  </section>;
 }
 
 function OfferEditor() {

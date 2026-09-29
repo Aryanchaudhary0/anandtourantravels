@@ -38,9 +38,10 @@ export function Header() {
 export function Footer() {
   const quick = [{ label: "About", href: "/about" }, { label: "Contact", href: "/contact" }, { label: "FAQ", href: "/faq" }, { label: "Vehicles", href: "/vehicles" }];
   const routes = [{ label: "Lansdowne", href: "/kotdwar-to-lansdowne-taxi" }, { label: "Delhi", href: "/kotdwar-to-delhi-taxi" }, { label: "Kedarnath", href: "/kotdwar-to-kedarnath-taxi" }, { label: "Badrinath", href: "/kotdwar-to-badrinath-taxi" }];
+  const map=`https://www.google.com/maps/embed/v1/place?key=${import.meta.env['VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY']}&q=place_id:${business.googlePlaceId}`;
   return <footer className="bg-primary pb-24 text-primary-foreground md:pb-0">
     <div className="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-      <div><div className="mb-4 flex items-center gap-2"><Mountain className="size-7 text-accent" /><strong className="font-display">ANAND TOUR & TRAVEL</strong></div><p className="max-w-xs text-sm leading-6 text-primary-foreground/70">{business.tagline}<br />Safe and comfortable taxi travel from {business.shortLocation}.</p></div>
+      <div><div className="mb-4 flex items-center gap-2"><Mountain className="size-7 text-accent" /><strong className="font-display">ANAND TOUR & TRAVEL</strong></div><p className="max-w-xs text-sm leading-6 text-primary-foreground/70">{business.tagline}<br />Safe and comfortable taxi travel from {business.shortLocation}.</p><iframe title="Anand Tour & Travel map" src={map} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="mt-4 h-32 w-full rounded-lg border border-primary-foreground/20"/><a href={business.businessProfileUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-accent hover:underline">View Google Business Profile</a></div>
       <FooterList title="Services" items={services.slice(0,4).map(({title,href}) => ({label:title,href}))} />
       <FooterList title="Popular routes" items={routes} />
       <FooterList title="Quick links" items={quick} />
