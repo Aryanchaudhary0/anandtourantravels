@@ -47,6 +47,45 @@ export type Database = {
         }
         Relationships: []
       }
+      pricing_items: {
+        Row: {
+          category: string
+          id: string
+          is_active: boolean
+          item_key: string
+          price: number
+          pricing_unit: string
+          sort_order: number
+          title: string
+          updated_at: string
+          vehicle_type: string
+        }
+        Insert: {
+          category: string
+          id?: string
+          is_active?: boolean
+          item_key: string
+          price: number
+          pricing_unit?: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+          vehicle_type: string
+        }
+        Update: {
+          category?: string
+          id?: string
+          is_active?: boolean
+          item_key?: string
+          price?: number
+          pricing_unit?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+          vehicle_type?: string
+        }
+        Relationships: []
+      }
       rates: {
         Row: {
           id: string

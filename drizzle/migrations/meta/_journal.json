@@ -8,6 +8,13 @@
       "when": 1790516361513,
       "tag": "0000_admin_panel",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790652006323,
+      "tag": "0001_add_editable_pricing_items",
+      "breakpoints": true
     }
   ]
 }
