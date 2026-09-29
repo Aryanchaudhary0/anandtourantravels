@@ -1,3 +1,8 @@
+import dzireImage from "@/assets/dzire-fleet.webp";
+import ertigaImage from "@/assets/ertiga-real.webp";
+import innovaImage from "@/assets/innova-fleet.webp";
+import tempoImage from "@/assets/tempo-travellers-real.webp";
+
 export const business = {
   name: "Anand Tour & Travel",
   tagline: "Your Journey. Our Responsibility.",
@@ -15,7 +20,10 @@ export const business = {
     addressCountry: "IN",
   },
   openingHours: "Mo-Su 00:00-23:59",
-  mapsUrl: "https://www.google.com/maps/place/Anand+tour+and+travels,+bsnl+tower,+near+jalnigam+store,+Ekta+Puram+Colony,+Shibu+Nagar,+Kotdwar,+Uttarakhand+246149/data=!4m2!3m1!1s0x39097d6551b992b1:0xba911fd8659253c4!18m1!1e1",
+  googlePlaceId: "ChIJsZK5UWV9CTkRxFOSZdgfkbo",
+  coordinates: { latitude: 29.7443059, longitude: 78.5023924 },
+  mapsUrl: "https://maps.google.com/?cid=13443561376955126724",
+  businessProfileUrl: "https://share.google/9tQi9MYdmdeQhV5db",
   announcement: "Planning an Uttarakhand trip? Ask us for a comfortable taxi plan tailored to your route.",
 } as const;
 
@@ -25,7 +33,8 @@ export const vehicles = [
     name: "Swift Dzire",
     bookingName: "Dzire Sedan",
     category: "4 Seater Sedan",
-    perKm: "₹12/km",
+    image: dzireImage,
+    imageAlt: "White Maruti Suzuki Swift Dzire sedan",
     description: "A comfortable, economical choice for couples, small families and business travel.",
   },
   {
@@ -33,8 +42,27 @@ export const vehicles = [
     name: "Maruti Ertiga",
     bookingName: "Ertiga SUV",
     category: "6+1 Seater SUV",
-    perKm: "₹16/km",
+    image: ertigaImage,
+    imageAlt: "Grey Maruti Ertiga with roof luggage carrier",
     description: "Extra room for families and groups travelling with luggage across Uttarakhand.",
+  },
+  {
+    id: "innova",
+    name: "Innova Crysta",
+    bookingName: "Innova Crysta",
+    category: "Premium 6+1 Seater MPV",
+    image: innovaImage,
+    imageAlt: "Toyota Innova Crysta premium MPV",
+    description: "Premium space and comfort for longer family, group and Char Dham journeys.",
+  },
+  {
+    id: "tempo",
+    name: "Tempo Traveller",
+    bookingName: "Tempo Traveller",
+    category: "Group Traveller",
+    image: tempoImage,
+    imageAlt: "Force Tempo Traveller vehicles available for group tours",
+    description: "A practical group vehicle for tours, pilgrimages and larger family journeys.",
   },
 ] as const;
 
@@ -49,13 +77,7 @@ const destinations = [
 const dzireRates = [2200, 2500, 2500, 4000, 3800, 5500, 7500, 6000, 7000, 10000, 5500, 8000, 11000];
 const ertigaRates = [3000, 3500, 3500, 5500, 5000, 7500, 10000, 8000, 9500, 13000, 7000, 11000, 15000];
 
-export const rateTables = vehicles.map((vehicle, vehicleIndex) => ({
-  ...vehicle,
-  rates: destinations.map((destination, index) => ({
-    destination,
-    price: (vehicleIndex === 0 ? dzireRates[index] : ertigaRates[index]) ?? 0,
-  })),
-}));
+export const rateTables = vehicles.slice(0, 2).map((vehicle, vehicleIndex) => ({ ...vehicle, rates: destinations.map((destination, index) => ({ destination, price: (vehicleIndex === 0 ? dzireRates[index] : ertigaRates[index]) ?? 0 })) }));
 
 export const popularRoutes = [
   { destination: "Lansdowne", rateKey: "Lansdowne", price: 2200, note: "Quiet hill station escape" },
