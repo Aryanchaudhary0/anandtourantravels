@@ -1,6 +1,6 @@
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent, type UIEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarClock, Car, Check, ChevronRight, CircleDollarSign, Clock3, Headphones, MapPin, MessageCircle, Navigation, Phone, Route, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { ArrowRight, CalendarClock, Car, Check, ChevronLeft, ChevronRight, CircleDollarSign, Clock3, Headphones, MapPin, MessageCircle, Navigation, Phone, Route, ShieldCheck, Sparkles, Users } from "lucide-react";
 import heroImage from "@/assets/himalayan-road-hero.jpg";
 import carImage from "@/assets/taxi-sedan.jpg";
 import { bookingVehicleOptions, business, formatPrice, popularRoutes, rateTables, rateTerms, services } from "@/config/business";
@@ -73,7 +73,7 @@ function BookingCard() {
 }
 function Field({label,icon:Icon,children}:{label:string;icon:typeof MapPin;children:React.ReactNode}) { return <div><Label className="mb-2 flex items-center gap-1.5"><Icon className="size-3.5 text-accent" />{label}</Label>{children}</div>; }
 
-function SectionHeading({eyebrow,title,description}:{eyebrow:string;title:string;description:string}) { return <div className="mx-auto mb-10 max-w-2xl text-center"><p className="section-eyebrow">{eyebrow}</p><h2 className="section-title">{title}</h2><p className="section-copy">{description}</p></div>; }
+function SectionHeading({eyebrow,title,description}:{eyebrow:string;title:string;description:string}) { return <div className="mx-auto mb-7 max-w-2xl text-center"><p className="section-eyebrow">{eyebrow}</p><h2 className="section-title">{title}</h2><p className="section-copy">{description}</p></div>; }
 
 function PopularRoutes() { const live=useLiveRates(); return <section className="section"><div className="site-container"><SectionHeading eyebrow="Popular journeys" title="Clear one-way fares from Kotdwar" description="Start with our most-booked routes. Prices shown below are for Swift Dzire." /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{popularRoutes.map(route=><article key={route.destination} className="group rounded-xl border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"><div className="flex items-start justify-between gap-3"><span className="grid size-10 shrink-0 place-items-center rounded-lg bg-secondary text-primary"><Route className="size-5" /></span><span className="text-right"><small className="block text-xs text-muted-foreground">One way from</small><strong className="font-display text-xl text-primary">{formatPrice(priceFor(live,route.rateKey,"Swift Dzire",route.price))}</strong></span></div><h3 className="mt-5 font-display text-lg font-bold">Kotdwar to {route.destination}</h3><p className="mt-1 text-sm text-muted-foreground">{route.note}</p><Button asChild variant="ghost" className="mt-4 px-0 text-accent"><a href={whatsappUrl(bookingMessage(route.destination,"Swift Dzire"))} target="_blank" rel="noreferrer">Book now <ArrowRight /></a></Button></article>)}</div></div></section>; }
 
