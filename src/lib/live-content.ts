@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { business, rateTables } from "@/config/business";
-import { CHAR_DHAM_PACKAGES, TOUR_PACKAGES } from "@/data/packages";
+import { CHAR_DHAM_PACKAGES, TOUR_PACKAGES, TRANSFER_PRICES } from "@/data/packages";
 
 export type LiveRate = { route_name: string; vehicle_type: string; price: number };
 export type LivePricingItem = { item_key: string; category: string; title: string; vehicle_type: string; price: number; pricing_unit: string; is_active: boolean };
@@ -34,6 +34,7 @@ export function priceFor(rates: LiveRate[], routeName: string, vehicle: string, 
 export const fallbackPricingItems: LivePricingItem[] = [
   ...TOUR_PACKAGES.map((item) => ({ item_key: item.key, category: "Tour packages", title: item.title, vehicle_type: item.vehicle, price: item.price, pricing_unit: item.pricingUnit, is_active: true })),
   ...CHAR_DHAM_PACKAGES.map((item) => ({ item_key: item.key, category: "Char Dham Yatra", title: `${item.title} · ${item.duration}`, vehicle_type: item.vehicle, price: item.price, pricing_unit: "full vehicle", is_active: true })),
+  ...TRANSFER_PRICES.map((item) => ({ item_key: item.key, category: "Airport & railway transfers", title: item.hub, vehicle_type: item.vehicle, price: item.price, pricing_unit: item.note, is_active: true })),
 ];
 
 export function useLivePricingItems() {
