@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CharDhamPage } from "@/components/site/pages";
 import { createPageHead } from "@/components/site/seo";
+import { SERVICE_HUBS } from "@/data/routes";
 
 export const Route = createFileRoute("/char-dham-yatra")({
   component: () => <CharDhamPage />,
-  head: () => createPageHead("Char Dham Yatra Taxi from Kotdwar", "Plan taxi travel for Kedarnath, Badrinath, Gangotri, and Yamunotri with Anand Tour & Travel.", "/char-dham-yatra"),
+  head: () => createPageHead(SERVICE_HUBS.charDham.metaTitle, SERVICE_HUBS.charDham.metaDescription, "/char-dham-yatra", { keywords: SERVICE_HUBS.charDham.keywords }),
 });
