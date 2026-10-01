@@ -31,6 +31,21 @@ export type TravelRoute = {
   roadAccess?: string;
 };
 
+export const SERVICE_HUBS = {
+  airport: {
+    title: "Railway Station & Airport Transfers from Kotdwar",
+    metaTitle: "Kotdwar Railway Station & Airport Taxi Transfers",
+    metaDescription: "Book transfers for Kotdwar Railway Station, Jolly Grant Airport and Delhi IGI Airport with luggage help, clean AC cars and arrival tracking.",
+    keywords: ["Kotdwar Railway Station taxi", "Jolly Grant Airport taxi from Kotdwar", "Delhi IGI Airport taxi from Kotdwar"],
+  },
+  charDham: {
+    title: "Char Dham & Do Dham Yatra Taxi Guide",
+    metaTitle: "Char Dham & Do Dham Yatra Taxi from Kotdwar",
+    metaDescription: "Compare Char Dham, Do Dham, Kedarnath and Badrinath taxi fares, routes, night halts and vehicles from Kotdwar, Haridwar or Rishikesh.",
+    keywords: ["Char Dham Yatra taxi from Haridwar & Rishikesh", "Do Dham taxi fare", "Kotdwar to Kedarnath taxi fare"],
+  },
+} as const;
+
 export const ROUTES = [
   {
     slug: "kotdwar-to-delhi-taxi", destination: "Delhi", h1: "Kotdwar to Delhi Taxi Service",
@@ -81,9 +96,9 @@ export const ROUTES = [
     metaTitle: "Kotdwar to Lansdowne Taxi Fare & Cab | Anand Tour & Travel",
     metaDescription: "Book a Kotdwar to Lansdowne taxi for a hill stay or day tour. Dzire one-way from ₹2,200 and Ertiga from ₹3,000.",
     keywords: ["Kotdwar to Lansdowne taxi", "Lansdowne cab fare", "Lansdowne day tour"],
-    intro: "Book a comfortable hill taxi from Kotdwar to Lansdowne for a relaxed day trip, stay or onward journey.",
-    highlights: ["Local hill-road experience", "Hotel and sightseeing drops", "Day-trip planning", "Sedan and SUV options"],
-    body: ["Lansdowne is one of the closest hill escapes from Kotdwar. A private taxi gives families and couples a flexible start and convenient hotel drop.", "Ask about a same-day return or one-way transfer; the final plan depends on waiting time and sightseeing stops."],
+    intro: "Arrive at Kotdwar Railway Station and continue to Lansdowne with a private hill taxi, or book a day tour from anywhere in Kotdwar.",
+    highlights: ["Kotdwar Railway Station pickup", "Mussoorie Express and Garhwal Express arrivals", "Bhulla Tal, Tip-in-Top and War Memorial", "Tarkeshwar Mahadev excursion planning"],
+    body: ["Lansdowne is one of the closest hill escapes from Kotdwar. Tourists arriving by Mussoorie Express or Garhwal Express can arrange a coordinated station pickup and continue directly to their hotel in Lansdowne.", "Choose a one-way transfer, a same-day return, or a full sightseeing plan. Return and sightseeing fares depend on waiting time, stops and the final itinerary, so they are confirmed directly before travel."],
     price: { dzire: 2200, ertiga: 3000 }, vehicleSummary: "Sedan, SUV, Innova & Tempo Traveller", rateKey: "Lansdowne", duration: "Approx. 1.5–2 hours",
     image: roadImage, socialImage: "/images/himalayan-road-hero.jpg", imageAlt: "Pine-lined hill road from Kotdwar to Lansdowne", category: "taxi",
   },

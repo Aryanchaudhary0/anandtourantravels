@@ -21,3 +21,9 @@
 - [x] Add editable tour and Char Dham package pricing
 - [x] Extend the fleet to Dzire, Ertiga, Innova Crysta, and Tempo Traveller
 - [ ] Verify public pages and authenticated owner editing end to end
+
+# Landing page expansion
+- [ ] Expand the Lansdowne gateway page with station pickup, sightseeing, and trip-specific booking actions
+- [ ] Build the railway station and airport transfer hub with editable fares
+- [ ] Add the Char Dham practical guide, fare comparison, route, halts, and vehicle advice
+- [ ] Verify the three expanded pages on mobile and desktop

@@ -17,6 +17,23 @@ export type TourPackage = {
   note?: string;
 };
 
+export type TransferPrice = {
+  key: string;
+  hub: "Kotdwar Railway Station" | "Jolly Grant Airport" | "Delhi IGI Airport";
+  vehicle: "Swift Dzire" | "Maruti Ertiga";
+  price: number;
+  note: string;
+};
+
+export const TRANSFER_PRICES = [
+  { key: "kotdwar-station-dzire", hub: "Kotdwar Railway Station", vehicle: "Swift Dzire", price: 0, note: "Local pickup or drop" },
+  { key: "kotdwar-station-ertiga", hub: "Kotdwar Railway Station", vehicle: "Maruti Ertiga", price: 0, note: "Local pickup or drop" },
+  { key: "jolly-grant-dzire", hub: "Jolly Grant Airport", vehicle: "Swift Dzire", price: 0, note: "Direct airport transfer" },
+  { key: "jolly-grant-ertiga", hub: "Jolly Grant Airport", vehicle: "Maruti Ertiga", price: 0, note: "Direct airport transfer" },
+  { key: "delhi-igi-dzire", hub: "Delhi IGI Airport", vehicle: "Swift Dzire", price: 5500, note: "One-way from Kotdwar" },
+  { key: "delhi-igi-ertiga", hub: "Delhi IGI Airport", vehicle: "Maruti Ertiga", price: 7000, note: "One-way from Kotdwar" },
+] satisfies TransferPrice[];
+
 export const TOUR_PACKAGES = [
   {
     key: "corbett-weekend-dzire",
