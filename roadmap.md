@@ -27,3 +27,9 @@
 - [x] Build the railway station and airport transfer hub with editable fares
 - [x] Add the Char Dham practical guide, fare comparison, route, halts, and vehicle advice
 - [x] Verify the three expanded pages on mobile and desktop
+
+# Footer expansion
+- [x] Add four-column brand, quick links, packages/routes, and fleet footer
+- [x] Send packages without dedicated pages to pre-filled WhatsApp enquiries
+- [x] Limit the admin route-price groups to Swift Dzire and Maruti Ertiga
+- [x] Verify the expanded footer on mobile and desktop

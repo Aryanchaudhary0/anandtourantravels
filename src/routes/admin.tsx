@@ -145,7 +145,7 @@ function RatesEditor() {
   const [edits, setEdits] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
   async function load() {
-    const { data, error } = await supabase.from("rates").select("id, route_name, vehicle_type, price").order("vehicle_type", { ascending: false }).order("sort_order");
+    const { data, error } = await supabase.from("rates").select("id, route_name, vehicle_type, price").in("vehicle_type", ["Swift Dzire", "Maruti Ertiga"]).order("vehicle_type", { ascending: false }).order("sort_order");
     if (error) toast.error(error.message); else setRates(data);
   }
   useEffect(() => { load(); }, []);
