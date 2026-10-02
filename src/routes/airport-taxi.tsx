@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ServicePage } from "@/components/site/pages";
+import { AirportTransferPage } from "@/components/site/pages";
 import { createPageHead } from "@/components/site/seo";
+import { SERVICE_HUBS } from "@/data/routes";
 
 export const Route = createFileRoute("/airport-taxi")({
-  component: () => <ServicePage type="airport" />,
-  head: () => createPageHead("Airport Taxi from Kotdwar", "Direct airport taxi transfers from Kotdwar to Delhi Airport, Dehradun Airport, and major railway stations.", "/airport-taxi"),
+  component: AirportTransferPage,
+  head: () => createPageHead(SERVICE_HUBS.airport.metaTitle, SERVICE_HUBS.airport.metaDescription, "/airport-taxi", { keywords: SERVICE_HUBS.airport.keywords }),
 });

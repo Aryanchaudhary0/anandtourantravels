@@ -4,7 +4,7 @@ import type { TravelRoute } from "@/data/routes";
 type HeadOptions = {
   image?: string;
   imageAlt?: string;
-  keywords?: string[];
+  keywords?: readonly string[];
   schemas?: Record<string, unknown>[];
 };
 
