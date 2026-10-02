@@ -168,7 +168,9 @@ function RatesEditor() {
     const failed = results.find((r) => r.error);
     if (failed?.error) toast.error(failed.error.message); else { toast.success(`${changed.length} price(s) saved`); setEdits({}); load(); }
   }
-  const groups = [...new Set(rates.map((r) => r.vehicle_type))];
+  const groups = [...new Set(rates.map((r) => r.vehicle_type))].filter(
+    (g) => g === "Swift Dzire" || g === "Maruti Ertiga"
+  );
   return <section className="rounded-xl border bg-card p-5 sm:p-6">
     <div className="flex flex-wrap items-center justify-between gap-3"><h2 className="font-display text-xl font-bold">Route prices (one way from Kotdwar)</h2><Button onClick={saveAll} disabled={saving || changed.length === 0}><Save /> {saving ? "Saving…" : `Save changes${changed.length ? ` (${changed.length})` : ""}`}</Button></div>
     <div className="mt-5 grid gap-6 lg:grid-cols-2">{groups.map((g) => <div key={g}><h3 className="mb-2 font-display font-bold text-accent">{g}</h3><div className="divide-y rounded-lg border">{rates.filter((r) => r.vehicle_type === g).map((r) => {
