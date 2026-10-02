@@ -56,32 +56,22 @@ function AdminPage() {
 }
 
 function Login() {
-  const [mode, setMode] = useState<"in" | "up">("in");
   const [error, setError] = useState("");
-  const [info, setInfo] = useState("");
   const [busy, setBusy] = useState(false);
   async function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault(); setError(""); setInfo(""); setBusy(true);
+    e.preventDefault(); setError(""); setBusy(true);
     const f = new FormData(e.currentTarget);
     const email = String(f.get("email")).trim(); const password = String(f.get("password"));
-    if (mode === "in") {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) setError(error.message === "Invalid login credentials" ? "Wrong email or password." : error.message);
-    } else {
-      const { data, error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: `${window.location.origin}/admin` } });
-      if (error) setError(error.message);
-      else if (!data.session) setInfo("Check your email and click the confirmation link, then log in here.");
-    }
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) setError(error.message === "Invalid login credentials" ? "Wrong email or password." : error.message);
     setBusy(false);
   }
   return <form onSubmit={submit} className="mx-auto grid max-w-sm gap-4 rounded-xl border bg-card p-6 shadow-sm">
-    <div><h1 className="font-display text-2xl font-bold">{mode === "in" ? "Owner login" : "Create owner account"}</h1><p className="mt-1 text-sm text-muted-foreground">Only approved owner emails get access.</p></div>
+    <div><h1 className="font-display text-2xl font-bold">Owner login</h1><p className="mt-1 text-sm text-muted-foreground">Only approved owner emails get access.</p></div>
     <div><Label htmlFor="email" className="mb-2">Email</Label><Input id="email" name="email" type="email" required autoComplete="email" /></div>
-    <div><Label htmlFor="password" className="mb-2">Password</Label><Input id="password" name="password" type="password" minLength={6} required autoComplete={mode === "in" ? "current-password" : "new-password"} /></div>
+    <div><Label htmlFor="password" className="mb-2">Password</Label><Input id="password" name="password" type="password" minLength={6} required autoComplete="current-password" /></div>
     {error && <p role="alert" className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">{error}</p>}
-    {info && <p className="rounded-md bg-secondary p-3 text-sm">{info}</p>}
-    <Button type="submit" disabled={busy}>{busy ? "Please wait…" : mode === "in" ? "Log in" : "Create account"}</Button>
-    <button type="button" className="text-sm font-semibold text-accent" onClick={() => { setMode(mode === "in" ? "up" : "in"); setError(""); setInfo(""); }}>{mode === "in" ? "First time? Create your owner account" : "Already have an account? Log in"}</button>
+    <Button type="submit" disabled={busy}>{busy ? "Please wait…" : "Log in"}</Button>
   </form>;
 }
 
