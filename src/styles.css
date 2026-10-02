@@ -169,3 +169,26 @@
 @utility section-copy { margin-top: .9rem; color: var(--color-muted-foreground); line-height: 1.75; }
 @utility bg-hero-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 96%, transparent) 0%, color-mix(in oklab, var(--primary) 82%, transparent) 52%, color-mix(in oklab, var(--primary) 58%, transparent) 100%); }
 @utility bg-page-overlay { background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 96%, transparent), color-mix(in oklab, var(--primary) 68%, transparent)); }
+
+/* Interaction polish */
+@layer components {
+  main article, main a.rounded-xl, main a.rounded-2xl, main .rounded-xl.border, main .rounded-2xl.border {
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  @media (hover: hover) {
+    main article:hover, main a.rounded-xl:hover, main a.rounded-2xl:hover, main .rounded-xl.border:hover, main .rounded-2xl.border:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px -14px color-mix(in oklab, var(--primary) 35%, transparent);
+      border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+    }
+    main article:hover img, main a.rounded-xl:hover img, main a.rounded-2xl:hover img { transform: scale(1.05); }
+  }
+  main article img, main a.rounded-xl img, main a.rounded-2xl img { transition: transform .5s ease; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button:active, a[class*="bg-"]:active { transform: scale(.97); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+}
