@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { CarFront, Menu, MessageCircle, Mountain, Phone, ShieldCheck } from "lucide-react";
-import { business, navLinks, services } from "@/config/business";
+import { CarFront, MapPin, Menu, MessageCircle, Mountain, Phone, ShieldCheck, Star } from "lucide-react";
+import { business, navLinks, vehicles } from "@/config/business";
 import { whatsappUrl, bookingMessage } from "@/lib/booking";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -36,15 +36,53 @@ export function Header() {
 }
 
 export function Footer() {
-  const quick = [{ label: "About", href: "/about" }, { label: "Contact", href: "/contact" }, { label: "FAQ", href: "/faq" }, { label: "Vehicles", href: "/vehicles" }];
-  const routes = [{ label: "Lansdowne", href: "/kotdwar-to-lansdowne-taxi" }, { label: "Delhi", href: "/kotdwar-to-delhi-taxi" }, { label: "Kedarnath", href: "/kotdwar-to-kedarnath-taxi" }, { label: "Badrinath", href: "/kotdwar-to-badrinath-taxi" }];
-  const map=`https://www.google.com/maps/embed/v1/place?key=${import.meta.env['VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY']}&q=place_id:${business.googlePlaceId}`;
+  const quick = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Our Fleet", href: "/vehicles" },
+    { label: "Tour Packages", href: "/outstation-taxi" },
+    { label: "Airport Transfers", href: "/airport-taxi" },
+    { label: "Char Dham Yatra Guide", href: "/char-dham-yatra" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "FAQ", href: "/faq" },
+  ] as const;
+  const routes = [
+    { label: "Kotdwar Taxi Service", href: "/taxi-service" },
+    { label: "Kotdwar to Lansdowne Taxi", href: "/kotdwar-to-lansdowne-taxi" },
+    { label: "Kotdwar to Delhi Taxi", href: "/kotdwar-to-delhi-taxi" },
+    { label: "Kotdwar to Dehradun Taxi", href: "/kotdwar-to-dehradun-taxi" },
+    { label: "Kotdwar to Haridwar Taxi", href: "/kotdwar-to-haridwar-taxi" },
+    { label: "Kotdwar to Rishikesh Taxi", href: "/kotdwar-to-rishikesh-taxi" },
+    { label: "Kotdwar to Jim Corbett Taxi", href: "/kotdwar-to-jim-corbett-taxi" },
+    { label: "Kotdwar to Nainital Taxi", href: "/kotdwar-to-nainital-taxi" },
+    { label: "Kotdwar to Mussoorie Taxi", href: "/kotdwar-to-mussoorie-taxi" },
+    { label: "Airport & Railway Transfers", href: "/airport-taxi" },
+    { label: "Char Dham Yatra Packages", href: "/char-dham-yatra" },
+    { label: "Kedarnath Taxi Package", href: "/kotdwar-to-kedarnath-taxi" },
+    { label: "Badrinath Taxi Package", href: "/kotdwar-to-badrinath-taxi" },
+    { label: "Gangotri Taxi Package", href: "/kotdwar-to-gangotri-taxi" },
+    { label: "Yamunotri Taxi Package", href: "/kotdwar-to-yamunotri-taxi" },
+  ] as const;
+  const enquiries = ["Kotdwar to Ayodhya Tour Package", "Kotdwar to Vaishno Devi Package", "Kotdwar to Kathmandu Tour Package", "Kotdwar to Varanasi Tour Package"] as const;
   return <footer className="bg-primary pb-24 text-primary-foreground md:pb-0">
-    <div className="site-container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-      <div><div className="mb-4 flex items-center gap-2"><Mountain className="size-7 text-accent" /><strong className="font-display">ANAND TOUR & TRAVEL</strong></div><p className="max-w-xs text-sm leading-6 text-primary-foreground/70">{business.tagline}<br />Safe and comfortable taxi travel from {business.shortLocation}.</p><iframe title="Anand Tour & Travel map" src={map} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="mt-4 h-32 w-full rounded-lg border border-primary-foreground/20"/><a href={business.businessProfileUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-accent hover:underline">View Google Business Profile</a></div>
-      <FooterList title="Services" items={services.slice(0,4).map(({title,href}) => ({label:title,href}))} />
-      <FooterList title="Popular routes" items={routes} />
-      <FooterList title="Quick links" items={quick} />
+    <div className="site-container grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.15fr_.8fr_1.45fr_.8fr] lg:gap-8">
+      <div>
+        <div className="mb-3 flex items-center gap-2"><Mountain className="size-7 text-accent" /><strong className="font-display">ANAND TOUR & TRAVEL</strong></div>
+        <p className="font-display text-sm font-semibold text-accent">{business.tagline}</p>
+        <p className="mt-3 max-w-sm text-sm leading-6 text-primary-foreground/70">Trusted Kotdwar taxi service for local travel, outstation trips, airport transfers and Uttarakhand pilgrimages.</p>
+        <a href={business.businessProfileUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-md bg-accent px-3 py-2 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"><Star className="size-4 fill-current" /> Google Business Profile</a>
+        <div className="mt-5 grid gap-3 text-sm">
+          <a href={`tel:${business.phone}`} className="flex items-center gap-2 font-semibold hover:text-accent"><Phone className="size-4 shrink-0 text-accent" />{business.phoneDisplay}</a>
+          <Button asChild variant="whatsapp" className="w-fit"><a href={whatsappUrl(bookingMessage())} target="_blank" rel="noreferrer"><MessageCircle /> WhatsApp</a></Button>
+          <a href={business.mapsUrl} target="_blank" rel="noreferrer" className="flex items-start gap-2 text-primary-foreground/70 hover:text-primary-foreground"><MapPin className="mt-0.5 size-4 shrink-0 text-accent" /><span>{business.address.streetAddress}, {business.address.addressLocality}, {business.address.addressRegion} {business.address.postalCode}</span></a>
+        </div>
+      </div>
+      <FooterList title="Quick Links" items={quick} />
+      <div>
+        <FooterList title="Our Packages & Routes" items={routes} />
+        <ul className="mt-2 space-y-2.5">{enquiries.map((label) => <li key={label}><a href={whatsappUrl(bookingMessage(label))} target="_blank" rel="noreferrer" className="text-sm text-primary-foreground/70 hover:text-primary-foreground">{label} <span className="text-accent">· Enquire</span></a></li>)}</ul>
+      </div>
+      <FooterList title="Our Fleet" items={vehicles.map((vehicle) => ({ label: vehicle.name, href: "/vehicles" as const }))} />
     </div>
     <div className="border-t border-primary-foreground/15"><div className="site-container flex flex-col gap-2 py-5 text-xs text-primary-foreground/65 sm:flex-row sm:justify-between"><span>© 2026 {business.name}. All rights reserved.</span><span>Terms & Conditions · Privacy Policy</span></div></div>
   </footer>;
