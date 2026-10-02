@@ -89,7 +89,7 @@ export function Footer() {
 }
 
 function FooterList({ title, items }: { title: string; items: readonly { label: string; href: string }[] }) {
-  return <div><h3 className="mb-4 font-display text-sm uppercase text-primary-foreground">{title}</h3><ul className="space-y-2.5">{items.map((item) => <li key={item.href}><Link to={item.href} className="text-sm text-primary-foreground/70 hover:text-primary-foreground">{item.label}</Link></li>)}</ul></div>;
+  return <div><h3 className="mb-4 font-display text-sm uppercase text-primary-foreground">{title}</h3><ul className="space-y-2.5">{items.map((item) => <li key={`${item.href}-${item.label}`}><Link to={item.href} className="text-sm text-primary-foreground/70 hover:text-primary-foreground">{item.label}</Link></li>)}</ul></div>;
 }
 
 export function MobileActionBar() {

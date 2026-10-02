@@ -32,4 +32,4 @@
 - [x] Add four-column brand, quick links, packages/routes, and fleet footer
 - [x] Send packages without dedicated pages to pre-filled WhatsApp enquiries
 - [x] Limit the admin route-price groups to Swift Dzire and Maruti Ertiga
-- [ ] Verify the expanded footer on mobile and desktop
+- [x] Verify the expanded footer on mobile and desktop
