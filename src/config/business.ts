@@ -52,7 +52,7 @@ export const vehicles = [
     bookingName: "Innova Crysta",
     category: "Premium 6+1 Seater MPV",
     image: innovaImage,
-    imageAlt: "Toyota Innova Crysta premium MPV",
+    imageAlt: "Brand new white Toyota Innova Crysta MPV with no number plate",
     description: "Premium space and comfort for longer family, group and Char Dham journeys.",
   },
   {
