@@ -34,7 +34,7 @@ export const vehicles = [
     bookingName: "Dzire Sedan",
     category: "4 Seater Sedan",
     image: dzireImage,
-    imageAlt: "White Maruti Suzuki Swift Dzire sedan",
+    imageAlt: "Brand new white Maruti Suzuki Swift Dzire sedan with no number plate",
     description: "A comfortable, economical choice for couples, small families and business travel.",
   },
   {
