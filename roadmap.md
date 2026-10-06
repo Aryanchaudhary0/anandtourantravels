@@ -33,4 +33,4 @@
 - [x] Send packages without dedicated pages to pre-filled WhatsApp enquiries
 - [x] Limit the admin route-price groups to Swift Dzire and Maruti Ertiga
 - [x] Verify the expanded footer on mobile and desktop
-- [ ] Replace Innova Crysta fleet photo with clean plate-free image
+- [x] Replace Innova Crysta fleet photo with clean plate-free image
