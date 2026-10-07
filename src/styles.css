@@ -192,3 +192,10 @@
     *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
   }
 }
+
+@layer base {
+  input[type="datetime-local"], input[type="date"], input[type="time"] { display: flex; align-items: center; padding-right: 0.5rem; }
+  input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper { padding: 0; }
+  input[type="datetime-local"]::-webkit-datetime-edit { flex: 1 1 auto; min-width: 0; overflow: hidden; padding: 0; }
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator { flex: 0 0 auto; margin-left: 0.25rem; cursor: pointer; }
+}
