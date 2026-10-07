@@ -201,7 +201,7 @@ const TextAnimate: FC<Props> = ({
               aria-hidden="true"
               key={index}
               initial="hidden"
-              animate={controls}
+              animate={isInView ? "visible" : "hidden"}
               variants={container}
               transition={{
                 delayChildren: index * 0.13,
