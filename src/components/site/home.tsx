@@ -8,6 +8,7 @@ import { yatraRoutes } from "@/data/routes";
 import { TOUR_PACKAGES } from "@/data/packages";
 import { bookingMessage, whatsappUrl } from "@/lib/booking";
 import { Button } from "@/components/ui/button";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -40,7 +41,7 @@ function Hero() {
     <div className="site-container grid min-h-[calc(100svh-4.5rem)] items-center gap-10 py-12 lg:grid-cols-[minmax(0,1.06fr)_minmax(340px,.72fr)] lg:py-16">
       <div className="min-w-0 self-center">
         <p className="mb-4 flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-accent"><span className="h-px w-8 bg-accent" />Your trusted travel partner</p>
-        <h1 className="max-w-3xl font-display text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl">Your Trusted Taxi Service in Kotdwar & All Uttarakhand</h1>
+        <TextAnimate text="Your Trusted Taxi Service in Kotdwar & All Uttarakhand" type="fadeInUp" className="max-w-3xl font-display text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl" />
         <p className="mt-5 text-base font-semibold text-primary-foreground/85 sm:text-lg">Safe <span className="mx-2 text-accent">•</span> Comfortable <span className="mx-2 text-accent">•</span> Transparent</p>
         <div className="mt-6 grid max-w-xl gap-3 sm:grid-cols-2">{["Verified Drivers","Clean Vehicles","On-Time Pickup","24/7 Support"].map(item=><span key={item} className="flex items-center gap-2 text-sm font-medium"><span className="grid size-6 place-items-center rounded-full bg-primary-foreground/15"><Check className="size-3.5 text-accent" /></span>{item}</span>)}</div>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button asChild size="lg" variant="whatsapp"><a href={whatsappUrl(bookingMessage())} target="_blank" rel="noreferrer"><MessageCircle /> WhatsApp Now</a></Button><Button asChild size="lg" variant="light"><a href={`tel:${business.phone}`}><Phone /> Call Now</a></Button></div>
