@@ -1,4 +1,3 @@
-"use client"
 import { FC, useRef } from "react"
 import { HTMLMotionProps, motion, useAnimation, useInView } from "motion/react"
 type AnimationType =
@@ -188,10 +187,7 @@ const TextAnimate: FC<Props> = ({
   ...props
 }: Props) => {
   const ref = useRef(null)
-  const controls = useAnimation()
   const isInView = useInView(ref, { once: true })
-
-  const letters = Array.from(text)
   const { container, child } = animationVariants[type]
 
   if (type === "rollIn" || type === "whipIn") {
