@@ -65,7 +65,7 @@ function BookingCard() {
     <div className="grid gap-4">
       <Field label="Pickup Location" icon={MapPin}><Input name="pickup" placeholder="Enter pickup location" required /></Field>
       <Field label="Drop Location" icon={Navigation}><Input name="drop" placeholder="Where are you going?" required /></Field>
-      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4"><Field label="Date & Time" icon={CalendarClock}><Input name="datetime" type="datetime-local" className="min-w-0 max-w-full" required /></Field><Field label="Passengers" icon={Users}><Input name="passengers" type="number" min="1" max="26" placeholder="2" required /></Field></div>
+      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4"><Field label="Date & Time" icon={CalendarClock}><Input name="datetime" type="datetime-local" className="min-w-0 max-w-full text-sm" required /></Field><Field label="Passengers" icon={Users}><Input name="passengers" type="number" min="1" max="26" placeholder="2" required /></Field></div>
       <div><Label htmlFor="vehicle" className="mb-2">Vehicle Type</Label><Select value={vehicle} onValueChange={setVehicle}><SelectTrigger id="vehicle" className="w-full"><SelectValue /></SelectTrigger><SelectContent>{bookingVehicleOptions.map(item=><SelectItem key={item} value={item}>{item}</SelectItem>)}</SelectContent></Select></div>
       <Button type="submit" size="xl" className="mt-1 w-full"><MessageCircle /> Get Fare & Book Now</Button>
       <p className="text-center text-xs text-muted-foreground">No payment required. Continue directly on WhatsApp.</p>
