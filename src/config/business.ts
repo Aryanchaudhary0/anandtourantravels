@@ -69,8 +69,8 @@ export const vehicles = [
 export const bookingVehicleOptions = ["Dzire Sedan", "Ertiga SUV", "Innova Crysta", "Tempo Traveller"] as const;
 
 const destinations = [
-  "Lansdowne", "Dugadda/Satpuli/Pauri", "Rishikesh/Haridwar", "Dehradun/Mussoorie/Dhanaulti",
-  "Jim Corbett/Ramnagar", "Nainital/Bhimtal", "Almora/Kausani/Ranikhet", "Tehri Lake",
+  "Lansdowne", "Pauri", "Rishikesh/Haridwar", "Dehradun/Mussoorie/Dhanaulti",
+  "Jim Corbett/Ramnagar", "Nainital/Bhimtal", "Almora", "Tehri Lake",
   "Chopta Tungnath", "Auli/Joshimath", "Delhi Airport/Delhi", "Kedarnath Sonprayag", "Badrinath",
 ] as const;
 
