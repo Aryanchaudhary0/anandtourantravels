@@ -12,4 +12,4 @@ Allow: /
 
 User-agent: *
 Allow: /
-Sitemap: https://anandtourandtravel.in/sitemap.xml
+Sitemap: https://www.anandtourandtravels.in/sitemap.xml

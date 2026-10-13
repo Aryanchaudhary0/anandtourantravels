@@ -6,7 +6,7 @@ import tempoImage from "@/assets/tempo-travellers-real.webp";
 export const business = {
   name: "Anand Tour & Travel",
   tagline: "Your Journey. Our Responsibility.",
-  siteUrl: "https://anandtourandtravel.in",
+  siteUrl: "https://www.anandtourandtravels.in",
   phoneDisplay: "+91 73021 93159",
   phone: "+917302193159",
   whatsapp: "917302193159",

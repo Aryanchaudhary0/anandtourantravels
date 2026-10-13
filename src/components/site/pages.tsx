@@ -15,20 +15,37 @@ import { RateTable } from "./home";
 export function PageHero({eyebrow,title,description,image=heroImage,imageAlt="Mountain road in the Uttarakhand Himalayas"}:{eyebrow:string;title:string;description:string;image?:string;imageAlt?:string}) { return <section className="relative isolate overflow-hidden bg-primary py-16 text-primary-foreground sm:py-20"><img src={image} alt={imageAlt} width={1600} height={1000} loading="lazy" className="absolute inset-0 -z-20 h-full w-full object-cover"/><div className="absolute inset-0 -z-10 bg-page-overlay"/><div className="site-container"><nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-semibold text-primary-foreground/70"><Link to="/">Home</Link><ChevronRight className="size-3.5"/><span aria-current="page">{title}</span></nav><p className="mb-3 text-xs font-bold uppercase tracking-widest text-accent">{eyebrow}</p><h1 className="max-w-3xl font-display text-4xl font-extrabold leading-tight sm:text-5xl">{title}</h1><p className="mt-5 max-w-2xl text-base leading-7 text-primary-foreground/80 sm:text-lg">{description}</p><div className="mt-7 flex flex-col gap-3 sm:flex-row"><Button asChild size="lg"><a href={whatsappUrl(bookingMessage())} target="_blank" rel="noreferrer"><MessageCircle/>Book on WhatsApp</a></Button><Button asChild size="lg" variant="light"><a href={`tel:${business.phone}`}><Phone/>Call {business.phoneDisplay}</a></Button></div></div></section>; }
 
 const serviceCopy = {
-  taxi: { eyebrow:"Kotdwar taxi service", title:"Reliable local taxi service in Kotdwar", description:"Book clean, comfortable taxi travel for local journeys, hotel transfers, railway trips, and nearby destinations.", points:["Point-to-point local travel","Flexible pickup within Kotdwar","Sedan and SUV options","Direct phone and WhatsApp booking"] },
-  outstation: { eyebrow:"Outstation travel", title:"Outstation taxi from Kotdwar", description:"Travel across Uttarakhand, Delhi NCR, and nearby destinations with transparent one-way fares and reliable drivers.", points:["One-way and round-trip options","Experienced hill-road drivers","Clear route rates","Doorstep pickup"] },
-  airport: { eyebrow:"Airport & station transfers", title:"Airport taxi from Kotdwar", description:"Plan direct transfers to Delhi Airport, Dehradun Airport, and major railway stations with convenient pickup.", points:["Planned pickup times","Space for passengers and luggage","Delhi Airport one-way rates available","Early morning and late-night trips"] },
+  taxi: {
+    eyebrow:"Kotdwar taxi service",
+    title:"Reliable local taxi service in Kotdwar",
+    description:"Book point-to-point travel around Kotdwar, including local hotel and railway station pickups.",
+    points:["Point-to-point local travel","Pickup arranged within Kotdwar","Sedan and SUV options","Direct phone and WhatsApp booking"],
+    sectionTitle:"Arrange a local Kotdwar pickup",
+    sectionDescription:"Share your pickup point, destination, preferred time, passenger count and luggage details. Confirm the vehicle, availability and fare directly before you travel.",
+    bookingDetails:["For Kotdwar Railway Station pickup, include your train and arrival time.","For a hotel or home pickup, send the address or a map pin.","Choose a vehicle that suits your group; compare the listed options on our fleet page."],
+    related:[{label:"Kotdwar railway and airport transfers",href:"/airport-taxi"},{label:"Compare available vehicles",href:"/vehicles"},{label:"Contact and booking details",href:"/contact"}],
+  },
+  outstation: {
+    eyebrow:"Outstation travel",
+    title:"Outstation taxi from Kotdwar",
+    description:"Plan a one-way or return taxi from Kotdwar for Uttarakhand destinations and Delhi, with listed route fares for Swift Dzire and Maruti Ertiga.",
+    points:["One-way and round-trip options","Sedan and SUV fare options","Published one-way route fares","Pickup planned around your itinerary"],
+    sectionTitle:"Plan your outstation journey",
+    sectionDescription:"Send your pickup point, destination, travel date, passenger count and preferred vehicle. Tell us whether you need a one-way trip or a return journey so the owner can confirm availability and the fare for your itinerary.",
+    bookingDetails:["Published route-table fares are one way from Kotdwar for Swift Dzire and Maruti Ertiga.","Toll, parking and state tax are extra; a ₹300 night charge applies from 10 PM to 5 AM.","For round trips, the customer covers the driver's food and stay."],
+    related:[{label:"Kotdwar to Rishikesh taxi",href:"/kotdwar-to-rishikesh-taxi"},{label:"Kotdwar to Haridwar taxi",href:"/kotdwar-to-haridwar-taxi"},{label:"Kotdwar to Dehradun taxi",href:"/kotdwar-to-dehradun-taxi"},{label:"Kotdwar to Delhi taxi",href:"/kotdwar-to-delhi-taxi"},{label:"Compare available vehicles",href:"/vehicles"}],
+  },
 } as const;
-export function ServicePage({type}:{type:keyof typeof serviceCopy}) { const page=serviceCopy[type]; return <SiteLayout><PageHero {...page}/><section className="section"><div className="site-container grid gap-10 lg:grid-cols-2 lg:items-center"><div><p className="section-eyebrow text-left">What to expect</p><h2 className="section-title text-left">A comfortable taxi, planned around you</h2><div className="mt-6 grid gap-3">{page.points.map(x=><p key={x} className="flex items-center gap-3 rounded-xl border bg-card p-4 font-semibold"><Check className="size-5 text-accent"/>{x}</p>)}</div></div><img src={carImage} alt="White sedan used for Anand Tour and Travel taxi journeys" width={1200} height={700} loading="lazy" className="w-full rounded-xl border bg-card object-cover"/></div></section>{type==="outstation"&&<RateTable/>}<SimpleCTA /></SiteLayout>; }
+export function ServicePage({type}:{type:"taxi"|"outstation"}) { const page=serviceCopy[type]; return <SiteLayout><PageHero {...page}/><section className="section"><div className="site-container grid gap-10 lg:grid-cols-2 lg:items-center"><div><p className="section-eyebrow text-left">{type==="taxi"?"Local booking":"Journey planning"}</p><h2 className="section-title text-left">{page.sectionTitle}</h2><p className="mt-4 leading-7 text-muted-foreground">{page.sectionDescription}</p><div className="mt-5 grid gap-3">{page.points.map(x=><p key={x} className="flex items-center gap-3 rounded-xl border bg-card p-4 text-sm font-semibold"><Check className="size-5 shrink-0 text-accent"/>{x}</p>)}</div><ul className="mt-5 grid gap-3">{page.bookingDetails.map(x=><li key={x} className="flex items-start gap-3 rounded-xl border bg-card p-4 text-sm leading-6"><Check className="mt-1 size-4 shrink-0 text-accent"/>{x}</li>)}</ul><nav aria-label={type==="taxi"?"Related local taxi services":"Related outstation routes"} className="mt-5 flex flex-wrap gap-x-5 gap-y-2">{page.related.map(link=><a key={link.href} href={link.href} className="inline-flex items-center gap-1 text-sm font-bold text-accent underline-offset-4 hover:underline">{link.label}<ArrowRight className="size-4"/></a>)}</nav></div><img src={carImage} alt="White sedan used for Anand Tour and Travel taxi journeys" width={1200} height={700} loading="lazy" className="w-full rounded-xl border bg-card object-cover"/></div></section>{type==="outstation"&&<RateTable/>}<SimpleCTA /></SiteLayout>; }
 
 export function AirportTransferPage() {
   const live = useLivePricingItems();
   const hubs = [...new Set(TRANSFER_PRICES.map((item) => item.hub))];
   const assurances = [
-    { icon: Clock3, title: "Arrival tracking", text: "Share your flight or train number so pickup can be planned around the latest arrival information." },
-    { icon: ShieldCheck, title: "On-time pickup guarantee", text: "Your confirmed pickup time and meeting point are agreed before the journey." },
-    { icon: Luggage, title: "Luggage support", text: "Choose the vehicle that fits your passengers and bags, with help during pickup and drop." },
-    { icon: Car, title: "Clean AC cars", text: "Travel in a clean, comfortable air-conditioned vehicle suited to the route." },
+    { icon: Clock3, title: "Arrival details", text: "Share your flight or train number and expected arrival time so pickup arrangements can be discussed." },
+    { icon: ShieldCheck, title: "Pickup details confirmed", text: "Agree on the pickup time and meeting point before the journey." },
+    { icon: Luggage, title: "Luggage planning", text: "Share the number and type of bags so the vehicle can be discussed along with your passenger count." },
+    { icon: Car, title: "Vehicle options", text: "Compare the listed vehicle types and confirm which one suits your route and group." },
   ];
   return <SiteLayout>
     <PageHero eyebrow="Station & airport transfer hub" title="Railway Station & Airport Transfers from Kotdwar" description="Pre-book reliable pickups and drops for Kotdwar Railway Station, Jolly Grant Airport and Delhi IGI Airport." />

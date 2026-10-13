@@ -35,7 +35,7 @@ export const SERVICE_HUBS = {
   airport: {
     title: "Railway Station & Airport Transfers from Kotdwar",
     metaTitle: "Kotdwar Railway Station & Airport Taxi Transfers",
-    metaDescription: "Book transfers for Kotdwar Railway Station, Jolly Grant Airport and Delhi IGI Airport with luggage help, clean AC cars and arrival tracking.",
+    metaDescription: "Arrange Kotdwar Railway Station, Jolly Grant Airport or Delhi IGI Airport transfers. Share your arrival time, passengers and luggage details to plan a suitable pickup.",
     keywords: ["Kotdwar Railway Station taxi", "Jolly Grant Airport taxi from Kotdwar", "Delhi IGI Airport taxi from Kotdwar"],
   },
   charDham: {
